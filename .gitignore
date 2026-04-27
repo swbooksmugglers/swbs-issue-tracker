@@ -1,0 +1,29 @@
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# vscode
+.vscode/
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+
+# virtual environment
+.venv/
+
+# frontend
+client/node_modules/
+client/dist/
+
+# project
+.defaults.env
+.defaults.example
+response_examples/
+
+# testing
+.pytest_cache/
+.coverage
