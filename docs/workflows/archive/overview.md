@@ -2,13 +2,13 @@
 
 ## Purpose
 
-Archive displays retailer-exclusive books grouped by retailer.
+Archive displays exclusive books grouped by retailer.
 
 ## Workflows
 
 Archive workflows are documented in:
 1. `access.md`
-2. `retailer-exclusives.md`
+2. `exclusives.md`
 3. `filtering.md`
 
 ## Role Rules
@@ -25,6 +25,6 @@ Archive route is `/archive`.
 
 ## Server Entry Points
 
-Retailer-exclusive books API is served by `/book/retailer-exclusives`.
+Exclusive books API is served by `/book/exclusives`.
 
 The API must require authenticated user access.

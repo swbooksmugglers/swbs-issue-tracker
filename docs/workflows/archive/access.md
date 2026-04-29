@@ -33,7 +33,7 @@ If validation fails, return unauthorized.
 2. User clicks Archive
 3. Client navigates to `/archive`
 4. Archive page validates token
-5. Archive page loads retailer exclusives
+5. Archive page loads exclusives
 
 ## Failure Workflow
 

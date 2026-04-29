@@ -19,7 +19,7 @@ Table of contents for documented application workflows.
 |---|---|
 | Overview | [archive/overview.md](archive/overview.md) |
 | Access | [archive/access.md](archive/access.md) |
-| Retailer Exclusives | [archive/retailer-exclusives.md](archive/retailer-exclusives.md) |
+| Exclusives | [archive/exclusives.md](archive/exclusives.md) |
 | Filtering | [archive/filtering.md](archive/filtering.md) |
 
 ## Navigation
