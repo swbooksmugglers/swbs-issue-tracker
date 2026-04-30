@@ -27,6 +27,8 @@ The users table supports:
 3. Search by email
 4. Pagination with 5 rows per page
 
+User search is inactive until the search text is at least 3 characters after trimming whitespace.
+
 Protected users must have role, enabled toggle, and delete controls disabled.
 
 ## Server Side Validation

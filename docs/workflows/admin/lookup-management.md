@@ -22,7 +22,7 @@ Lookup records referenced by books must not be deleted. Delete conflict handling
 Client side validation occurs in the Manage Authors, Manage Publishers, and Manage Exclusives modals.
 
 On search validation failure
-1. If query is empty, keep Search button disabled
+1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled
 2. This should not trigger a backend call for lookup search
 
 On add validation failure
@@ -61,9 +61,10 @@ If lookup record is referenced by books, apply the block-and-notify rule from `d
 1. User opens Manage Authors, Manage Publishers, or Manage Exclusives
 2. User enters search query
 3. User clicks Search
-4. Client calls the list API for that lookup type
-5. Client filters results by query
-6. Client displays matching rows
+4. Client trims query and validates query length is at least 3 characters
+5. Client calls the list API for that lookup type
+6. Client filters results by query
+7. Client displays matching rows
 
 ## Add Lookup Workflow
 

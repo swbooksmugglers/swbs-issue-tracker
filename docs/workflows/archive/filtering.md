@@ -16,8 +16,9 @@ Client side validation occurs when a user types in an exclusive filter or clicks
 
 On filter change:
 1. Store filter text for that exclusive
-2. Convert filter text to lowercase for matching
-3. Filter books for that exclusive by title or author
+2. Trim filter text and convert it to lowercase for matching
+3. If filter text is fewer than 3 characters after trimming whitespace, show all books for that exclusive
+4. If filter text is at least 3 characters, filter books for that exclusive by title or author
 
 On collapse toggle:
 1. Toggle collapsed state for the selected exclusive
@@ -28,13 +29,14 @@ On collapse toggle:
 1. User opens Archive page
 2. User expands or collapses exclusive sections
 3. User enters filter text for an exclusive
-4. Client filters only that exclusive's books
-5. Matching books remain visible
-6. Non-matching books are hidden
+4. Client validates filter length is at least 3 characters after trimming whitespace
+5. Client filters only that exclusive's books
+6. Matching books remain visible
+7. Non-matching books are hidden
 
 ## Empty Filter Workflow
 
-1. If filter is empty, show all books for that exclusive
+1. If filter is fewer than 3 characters after trimming whitespace, show all books for that exclusive
 2. If filter excludes all books, display no-books-match-filter message in that exclusive table
 
 ## Server Side Validation

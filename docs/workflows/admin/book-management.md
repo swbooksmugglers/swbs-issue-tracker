@@ -13,7 +13,7 @@ Changing ISBN on an existing book must use Save as New instead of Update.
 Client side validation occurs in the Manage Books modal.
 
 On search validation failure
-1. If query is empty, keep Search button disabled
+1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled
 2. This should not trigger a backend call for book search
 
 On add or edit validation failure
@@ -63,9 +63,10 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 1. User opens Manage Books
 2. User enters search query
 3. User clicks Search
-4. Client calls book search API
-5. API searches title, ISBN, author, publisher, and exclusive
-6. Client displays matching books
+4. Client trims query and validates query length is at least 3 characters
+5. Client calls book search API
+6. API searches title, ISBN, author, publisher, and exclusive
+7. Client displays matching books
 
 ## Add Book Workflow
 

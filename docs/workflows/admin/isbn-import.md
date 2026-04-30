@@ -17,7 +17,7 @@ Import does not create the book record until the user saves the Add Book form.
 Client side validation occurs when the ISBN Import modal is submitted.
 
 On client side validation failure
-1. If ISBN is empty, keep Import button disabled
+1. If ISBN is fewer than 3 characters after trimming whitespace, keep Import button disabled
 2. This should not trigger a backend call for ISBN import
 
 ## Server Side Validation
@@ -43,17 +43,18 @@ If author or publisher from ISFDB does not exist locally, create it.
 2. User clicks ISBN Import
 3. User enters ISBN
 4. User clicks Import
-5. Client calls ISBN import API
-6. API searches ISFDB by ISBN
-7. API parses publication data
-8. API upserts author and publisher when needed
-9. API resolves matching book type when possible
-10. API returns prefill data
-11. Client closes ISBN Import modal
-12. Client opens Add Book modal with imported fields prefilled
-13. Client displays creation notice for any newly created author or publisher
-14. User completes any missing required book fields
-15. User saves Add Book form
+5. Client trims ISBN and validates length is at least 3 characters
+6. Client calls ISBN import API
+7. API searches ISFDB by ISBN
+8. API parses publication data
+9. API upserts author and publisher when needed
+10. API resolves matching book type when possible
+11. API returns prefill data
+12. Client closes ISBN Import modal
+13. Client opens Add Book modal with imported fields prefilled
+14. Client displays creation notice for any newly created author or publisher
+15. User completes any missing required book fields
+16. User saves Add Book form
 
 Prefilled fields can include:
 1. Title
@@ -67,7 +68,7 @@ Prefilled fields can include:
 
 ## Failure Workflow
 
-1. If ISBN is empty, keep Import button disabled
+1. If ISBN is too short, keep Import button disabled
 2. If ISFDB search fails, display API error message
 3. If no ISFDB record is found, display API error message
 4. If local database update fails, display API error message

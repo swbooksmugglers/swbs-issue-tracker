@@ -14,15 +14,17 @@ Client side validation occurs when Search Results page loads.
 
 On client side validation:
 1. If no token exists, redirect to Sign In page
-2. If no query exists, do not call search API
-3. If query exists, clear previous results and filter state
-4. Call search API with query
+2. If query is fewer than 3 characters after trimming whitespace, do not call search API
+3. If query is valid, clear previous results and filter state
+4. Call search API with trimmed query
 
 Client-side result filtering matches:
 1. Title
 2. Author
 3. Publisher
 4. Exclusive
+
+Client-side result filtering is inactive until filter text is at least 3 characters after trimming whitespace.
 
 ## Server Side Validation
 
@@ -42,12 +44,13 @@ Search should match:
 ## Success Workflow
 
 1. Search Results page receives token and query
-2. Client calls search API
-3. API searches books by ISBN, title, author, publisher, or exclusive
-4. API returns matching books ordered by title
-5. Client renders results table
-6. Client displays book cover when available
-7. User can enter a filter to narrow results locally
+2. Client validates query length is at least 3 characters after trimming whitespace
+3. Client calls search API
+4. API searches books by ISBN, title, author, publisher, or exclusive
+5. API returns matching books ordered by title
+6. Client renders results table
+7. Client displays book cover when available
+8. User can enter a filter of at least 3 characters to narrow results locally
 
 Displayed result fields are:
 1. Cover
