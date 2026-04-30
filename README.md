@@ -27,7 +27,7 @@ So you’d say it quickly as: swibz
 
 Docs cover the access (permissions) and workflow explainations for all features.
 
-[Docs Table of Contents](docs/workflows/README.md)
+[Docs](docs/workflows/README.md)
 
 ## Issue Tracker
 
@@ -41,4 +41,4 @@ The support requests submitted through the app's `Support` menu options will be 
 
 The wiki is the place to capture & discuss ideas before making decisions to add them as feature requests.
 
-[SWBS Wiki](https://github.com/swbooksmugglers/swbs-issue-tracker/wiki)
+[Wiki](https://github.com/swbooksmugglers/swbs-issue-tracker/wiki)
