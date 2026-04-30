@@ -4,15 +4,11 @@
 
 User Management requires role `admin`.
 
-Admins can list users.
-
-Admins can update user role.
-
-Admins can enable or disable user accounts.
-
-Admins can delete users.
+Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
 The protected admin account must not be modified or deleted.
+
+Protected admin behavior follows `docs/context/auth/protected-admin.md`.
 
 ## Client Side Validation
 
@@ -92,13 +88,14 @@ Valid roles are:
 6. Client calls delete user API
 7. API validates admin access
 8. API validates target user is not protected
-9. API deletes user
-10. Client removes user from local table
-11. Client displays success message
+9. API applies block-and-notify delete handling from `docs/context/development/database-patterns.md`
+10. If deletion is allowed, API deletes user
+11. Client removes user from local table
+12. Client displays success message
 
 ## Failure Workflow
 
 1. If loading users fails, display failed-to-load message
 2. If update fails, keep local user state unchanged and display API error message
-3. If delete fails, close confirmation dialog and display API error message
+3. If delete is blocked or fails, close confirmation dialog and display API error message
 4. If network fails, display network error message

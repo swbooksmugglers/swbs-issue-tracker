@@ -2,13 +2,7 @@
 
 ## Rules
 
-Book management requires role `admin` or `power_user`.
-
-Creating books requires role `admin` or `power_user`.
-
-Updating books requires role `admin` or `power_user`.
-
-Deleting books requires role `admin`.
+Book management access follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
 ISBN must be unique.
 
@@ -61,6 +55,8 @@ Book APIs must validate:
 If ISBN already exists when creating a book, return a conflict error.
 
 If updating or deleting a missing book, return not found.
+
+Delete conflict handling follows the block-and-notify rule in `docs/context/development/database-patterns.md`.
 
 ## Search Book Workflow
 
@@ -119,9 +115,10 @@ If updating or deleting a missing book, return not found.
 6. Delete button remains disabled until typed title exactly matches the book title
 7. Admin clicks Delete
 8. Client calls delete book API
-9. API deletes book
-10. Client closes modal
-11. Client displays success message
+9. API applies block-and-notify delete handling from `docs/context/development/database-patterns.md`
+10. If deletion is allowed, API deletes book
+11. Client closes modal
+12. Client displays success message
 
 ## Failure Workflow
 
@@ -129,5 +126,5 @@ If updating or deleting a missing book, return not found.
 2. If search fails, display search error message
 3. If create fails, keep form open and display API error message
 4. If update fails, keep form open and display API error message
-5. If delete fails, return to edit view and display API error message
+5. If delete is blocked or fails, return to edit view and display API error message
 6. If network fails, display network error message

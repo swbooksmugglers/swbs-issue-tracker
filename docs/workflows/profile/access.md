@@ -2,9 +2,9 @@
 
 ## Rules
 
-User must be signed in with a valid JWT.
+Profile access requires a valid session.
 
-User account must be enabled.
+Valid session behavior follows `docs/context/auth/session.md`.
 
 Profile data belongs to the authenticated user resolved from the JWT.
 
@@ -26,13 +26,7 @@ On client side validation:
 
 Server side validation must occur at the API level.
 
-Profile APIs must validate:
-1. Bearer token is present
-2. Bearer token is valid and not expired
-3. Token belongs to an enabled user
-4. Token was issued after the user's last sign out time
-
-If validation fails, return unauthorized.
+Profile API session validation follows `docs/context/auth/session.md`.
 
 ## Get Profile Workflow
 

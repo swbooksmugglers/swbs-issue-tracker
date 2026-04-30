@@ -2,15 +2,11 @@
 
 ## Rules
 
-User must be signed in with a valid JWT.
+Session validation follows `docs/context/auth/session.md`.
 
-User role must be `admin` or `power_user` to access the Admin page.
+Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
-User role must be `admin` to access User Management.
-
-User role must be `admin` or `power_user` to access Archive Import and Archive Management.
-
-Delete actions require role `admin`.
+Admin page access requires role `admin` or `power_user`.
 
 ## Client Side Validation
 
@@ -28,15 +24,9 @@ On client side validation:
 
 Server side validation must occur at the API level.
 
-User Management APIs must require admin access.
+Admin APIs must enforce the role requirements defined in the permissions matrix.
 
-Archive creation and update APIs must require power-user access.
-
-Archive delete APIs must require admin access.
-
-If a token is missing, invalid, expired, belongs to a disabled user, or was issued before the user's last sign out, return unauthorized.
-
-If a valid user does not have the required role, return forbidden.
+Authentication and authorization failures follow `docs/context/auth/session.md` and `docs/context/auth/roles.md`.
 
 ## Success Workflow
 

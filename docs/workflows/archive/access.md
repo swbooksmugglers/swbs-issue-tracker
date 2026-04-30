@@ -2,9 +2,9 @@
 
 ## Rules
 
-User must be signed in with a valid JWT.
+Archive access requires a valid session.
 
-User account must be enabled.
+Valid session behavior follows `docs/context/auth/session.md`.
 
 ## Client Side Validation
 
@@ -19,13 +19,7 @@ On client side validation:
 
 Server side validation must occur at the API level.
 
-Archive API must validate:
-1. Bearer token is present
-2. Bearer token is valid and not expired
-3. Token belongs to an enabled user
-4. Token was issued after the user's last sign out time
-
-If validation fails, return unauthorized.
+Archive API session validation follows `docs/context/auth/session.md`.
 
 ## Success Workflow
 

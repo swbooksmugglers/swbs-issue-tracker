@@ -7,13 +7,15 @@ Lookup management covers:
 2. Publishers
 3. Retailers / Exclusives
 
+Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
+
 Listing, creating, and renaming lookup records require role `admin` or `power_user`.
 
 Deleting lookup records requires role `admin`.
 
 Lookup names must be unique case-insensitively within the lookup type.
 
-Lookup records referenced by books must not be deleted.
+Lookup records referenced by books must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
 
 ## Client Side Validation
 
@@ -52,7 +54,7 @@ If duplicate name exists, return conflict.
 
 If lookup record does not exist, return not found.
 
-If lookup record is referenced by books, return conflict and include reference count.
+If lookup record is referenced by books, apply the block-and-notify rule from `docs/context/development/database-patterns.md`.
 
 ## Search Lookup Workflow
 
@@ -99,14 +101,15 @@ If lookup record is referenced by books, return conflict and include reference c
 7. Admin clicks Delete
 8. Client calls delete API for that lookup type
 9. API verifies no books reference the lookup record
-10. API deletes lookup record
-11. Client closes modal
-12. Client displays success message
+10. API applies block-and-notify delete handling from `docs/context/development/database-patterns.md`
+11. If deletion is allowed, API deletes lookup record
+12. Client closes modal
+13. Client displays success message
 
 ## Failure Workflow
 
 1. If search fails, display search error message
 2. If create fails, keep add view open and display API error message
 3. If rename fails, keep edit view open and display API error message
-4. If delete fails, return to edit view and display API error message
+4. If delete is blocked or fails, return to edit view and display API error message
 5. If network fails, display network error message

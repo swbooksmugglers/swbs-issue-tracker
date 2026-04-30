@@ -2,6 +2,8 @@
 
 Table of contents for documented application workflows.
 
+Read workflow docs with `docs/context/index.md`. Shared auth, permissions, security, UX, and definition-of-done rules apply to every workflow unless a workflow explicitly says otherwise.
+
 ## Admin
 
 | Workflow | Document |
