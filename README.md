@@ -33,4 +33,12 @@ Docs cover the access (permissions) and workflow explainations for all features.
 
 The issue tracker is used to track reported bugs and feature requests.
 
+The support requests submitted through the app's `Support` menu options will be logged as a `bug` in the issue tracker.
+
 [Issue Tracker](https://github.com/swbooksmugglers/swbs-issue-tracker/issues)
+
+## Wiki
+
+The wiki is the place to capture & discuss ideas before making decisions to add them as feature requests.
+
+[SWBS Wiki](https://github.com/swbooksmugglers/swbs-issue-tracker/wiki)
