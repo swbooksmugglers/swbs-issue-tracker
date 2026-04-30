@@ -20,3 +20,17 @@ Breakdown:
 * “bs” becomes a “bz” sound at the end (common in English, like “tabs” → “tabz”)
 
 So you’d say it quickly as: swibz
+
+## Docs
+
+**NOTE: The docs are auto-generated whenever there are updates made to the app. Do NOT manually edit them.**
+
+Docs cover the access (permissions) and workflow explainations for all features.
+
+[Docs Table of Contents](docs/workflows/README.md)
+
+## Issue Tracker
+
+The issue tracker is used to track reported bugs and feature requests.
+
+[Issue Tracker](https://github.com/swbooksmugglers/swbs-issue-tracker/issues)
