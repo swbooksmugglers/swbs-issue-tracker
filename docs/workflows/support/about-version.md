@@ -2,7 +2,7 @@
 
 ## Rules
 
-About modal displays app name and app version.
+About modal displays app name, summary, app version, and development team credit.
 
 Version is loaded from the support version API.
 
@@ -13,8 +13,9 @@ Client side validation occurs when the About menu item is clicked.
 On click:
 1. Open About modal
 2. Call version API
-3. Display version when loaded
-4. Display `unknown` if version lookup fails
+3. Display app summary and development team credit
+4. Display version when loaded
+5. Display `unknown` if version lookup fails
 
 ## Server Side Validation
 
@@ -29,7 +30,7 @@ Version API returns the current app version.
 3. Client opens About modal
 4. Client calls version API
 5. API returns app version
-6. Client displays app name and version
+6. Client displays app name, summary, version, and development team credit
 7. User clicks Close to dismiss modal
 
 ## Failure Workflow
