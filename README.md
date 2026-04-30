@@ -1,4 +1,4 @@
-# Star Wars Book Smugglers (SWBS) Docs & Issue Tracker
+# Star Wars Book Smugglers (SWBS)
 
 ## Pronounciation
 
