@@ -22,7 +22,7 @@ Client-side result filtering matches:
 1. Title
 2. Author
 3. Publisher
-4. Retailer
+4. Exclusive
 
 ## Server Side Validation
 
@@ -37,13 +37,13 @@ Search should match:
 2. Title
 3. Author
 4. Publisher
-5. Retailer
+5. Exclusive
 
 ## Success Workflow
 
 1. Search Results page receives token and query
 2. Client calls search API
-3. API searches books by ISBN, title, author, publisher, or retailer
+3. API searches books by ISBN, title, author, publisher, or exclusive
 4. API returns matching books ordered by title
 5. Client renders results table
 6. Client displays book cover when available
@@ -55,7 +55,7 @@ Displayed result fields are:
 3. ISBN
 4. Author
 5. Publisher
-6. Exclusive retailer
+6. Exclusive
 7. Publication date
 8. MSRP
 9. Pre-signed status

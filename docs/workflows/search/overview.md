@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Search lets signed-in users find books in the archive by title, ISBN, author, publisher, or retailer.
+Search lets signed-in users find books in the archive by title, ISBN, author, publisher, or exclusive.
 
 ## Workflows
 

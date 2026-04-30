@@ -2,13 +2,13 @@
 
 ## Rules
 
-Archive displays exclusive books that have a retailer assigned.
+Archive displays exclusive books that have an exclusive assigned.
 
-Books must be grouped by retailer.
+Books must be grouped by exclusive.
 
-Retailer groups must be sorted by retailer name.
+Exclusive groups must be sorted by exclusive name.
 
-Books returned by the API must be ordered by retailer name and title.
+Books returned by the API must be ordered by exclusive name and title.
 
 ## Client Side Validation
 
@@ -25,17 +25,17 @@ Server side validation must occur at the API level.
 
 The exclusives API must validate:
 1. Caller is authenticated
-2. Book has a non-null retailer ID
+2. Book has a non-null exclusive ID
 
 ## Success Workflow
 
 1. Archive page loads
 2. Client calls exclusives API
-3. API returns books with retailer data
-4. Client groups books by retailer
-5. Client sorts retailer group names
-6. Client displays each retailer as a collapsible section
-7. Client displays books in a table under each retailer
+3. API returns books with exclusive data
+4. Client groups books by exclusive
+5. Client sorts exclusive group names
+6. Client displays each exclusive as a collapsible section
+7. Client displays books in a table under each exclusive
 
 Displayed fields are:
 1. Cover

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Archive displays exclusive books grouped by retailer.
+Archive displays exclusive books grouped by exclusive.
 
 ## Workflows
 

@@ -5,7 +5,7 @@
 Lookup management covers:
 1. Authors
 2. Publishers
-3. Retailers / Exclusives
+3. Exclusives / Exclusives
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 

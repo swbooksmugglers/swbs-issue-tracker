@@ -36,7 +36,7 @@ Optional book fields are:
 1. Signed
 2. Series
 3. Notes
-4. Exclusive retailer
+4. Exclusive
 5. Case type
 6. Limitation
 7. Limited edition type
@@ -64,7 +64,7 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 2. User enters search query
 3. User clicks Search
 4. Client calls book search API
-5. API searches title, ISBN, author, publisher, and retailer
+5. API searches title, ISBN, author, publisher, and exclusive
 6. Client displays matching books
 
 ## Add Book Workflow
