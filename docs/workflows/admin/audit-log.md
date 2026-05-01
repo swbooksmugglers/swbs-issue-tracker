@@ -29,6 +29,10 @@ Mutation workflows write audit entries from the backend after successful databas
 
 Blocked delete workflows write audit entries with `status = 'blocked'`.
 
+New audit entries should use human-readable entity type values such as `book`, `book summary`, `sub-series`, `author`, `publisher`, `exclusive`, `era`, `series`, `role`, `user`, and `profile`.
+
+Historical audit rows are not rewritten when entity wording changes.
+
 ## Fields
 
 Audit entries include:

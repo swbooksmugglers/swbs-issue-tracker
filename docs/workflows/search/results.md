@@ -56,7 +56,8 @@ Search should match:
 5. API returns matching books ordered by title
 6. Client renders results table
 7. Client displays book cover when available
-8. User can enter a filter of at least 3 characters to narrow results locally
+8. User can open a read-only book details dialog from the row action icon
+9. User can enter a filter of at least 3 characters to narrow results locally
 
 Displayed result fields are:
 1. Cover
@@ -68,9 +69,7 @@ Displayed result fields are:
 7. Publisher
 8. Exclusive
 9. Publication date
-10. MSRP
-11. Pre-signed status
-12. Notes
+10. Row action to view details
 
 ## Empty State Workflow
 

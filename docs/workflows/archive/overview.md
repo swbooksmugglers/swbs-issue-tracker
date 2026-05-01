@@ -27,4 +27,6 @@ Archive route is `/archive`.
 
 Exclusive books API is served by `/book/exclusives`.
 
-The API must require authenticated user access.
+Book detail API is served by `/book/{book_id}`.
+
+The APIs must require authenticated user access.

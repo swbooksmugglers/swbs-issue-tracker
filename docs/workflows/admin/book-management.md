@@ -42,6 +42,7 @@ Optional book fields are:
 7. Case type
 8. Limitation
 9. Limited edition type
+10. Summary
 
 Sub-series is optional. If selected, series must also be selected, and the sub-series must belong to that series.
 
@@ -60,6 +61,12 @@ Book APIs must validate:
 If ISBN already exists when creating a book, return a conflict error.
 
 If updating or deleting a missing book, return not found.
+
+Book summary APIs must validate:
+1. Caller has role `admin` or `power_user` for add and edit
+2. Caller has role `admin` for delete
+3. Summary is present when adding or editing
+4. Book exists
 
 Delete conflict handling follows the block-and-notify rule in `docs/context/development/database-patterns.md`.
 
@@ -125,6 +132,36 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 10. If deletion is allowed, API deletes book
 11. Client closes modal
 12. Client displays success message
+
+## Book Summary API Workflow
+
+The frontend add and edit summary workflow is not implemented yet.
+
+Backend endpoints:
+1. `POST /admin/book/{book_id}/summary` adds a summary and embedding
+2. `PUT /admin/book/{book_id}/summary` updates a summary and embedding
+3. `DELETE /admin/book/{book_id}/summary` clears the summary and embedding
+4. `GET /admin/book-summary/google-books/{isbn}` retrieves a suggested summary from Google Books
+
+Add and edit summary require power user access.
+
+Delete summary requires admin access.
+
+Google Books summary retrieval requires power user access and does not write to the database.
+
+Summary add, edit, and delete write audit entries with `entity_type = "book summary"`.
+
+## ISBN Import Summary Workflow
+
+When ISBN import finds a book through ISFDB, the backend should also perform a best-effort Google Books summary lookup using the normalized ISBN.
+
+ISBN import canonicalizes valid ISBN-10 and ISBN-13 values to ISBN-13 for duplicate checks, ISFDB lookup fallback values, Google Books summary lookup, and the imported book form value.
+
+If Google Books returns a summary, include it as `summary` in the import payload.
+
+If Google Books returns no summary or the summary lookup fails, include `summary: ""` and still return the ISFDB import data.
+
+The frontend displays the imported summary in the book form. Saving the book stores the summary and generates its embedding when the summary is not blank.
 
 ## Failure Workflow
 

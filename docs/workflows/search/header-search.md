@@ -8,6 +8,8 @@ Search query must be at least 3 characters after trimming whitespace.
 
 Search is submitted from the global header.
 
+The simple header search uses book metadata search.
+
 ## Client Side Validation
 
 Client side validation occurs when the Search form is submitted.
@@ -34,7 +36,7 @@ If query is invalid, return an unprocessable entity error.
 3. Client trims query
 4. Client validates query length is at least 3 characters
 5. Client navigates to `/search` with token and query in route state
-6. Search Results page performs the backend search
+6. Search Results page performs the backend search with `scope=books`
 
 ## Failure Workflow
 
