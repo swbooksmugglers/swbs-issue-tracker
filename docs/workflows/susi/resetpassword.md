@@ -42,10 +42,11 @@ The reset-password API must validate:
 4. Token can be decoded
 5. Token purpose is `password_reset`
 6. Token is not expired
+7. Token has not already been used (token `iat` must be after `users.password_reset_at`)
 
 If invalid parameters are used, return an error and do not update the password.
 
-If the token is invalid, expired, or has the wrong purpose, return an invalid reset link error.
+If the token is invalid, expired, already used, or has the wrong purpose, return an invalid reset link error.
 
 ## Success Workflow
 
@@ -58,7 +59,7 @@ If the token is invalid, expired, or has the wrong purpose, return an invalid re
 7. API validates the request
 8. API decodes and validates the reset token
 9. API hashes the new password
-10. API updates the user's password
+10. API updates the user's password, sets `password_reset_at = NOW()`, and sets `last_signout_at = NOW()` to invalidate existing sessions
 11. API returns a success response
 12. Client redirects to the Sign In page
 13. Sign In page displays password reset success notice
