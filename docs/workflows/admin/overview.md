@@ -10,8 +10,9 @@ The page is available to users with role `admin` or `power_user`.
 
 Admin users can access:
 1. User Management
-2. Archive Import
-3. Archive Management
+2. Audit Log
+3. Archive Import
+4. Archive Management
 
 Power users can access:
 1. Archive Import
@@ -24,9 +25,10 @@ Users without `admin` or `power_user` role must not access the Admin page.
 Admin page workflows are documented in:
 1. `access.md`
 2. `user-management.md`
-3. `isbn-import.md`
-4. `book-management.md`
-5. `lookup-management.md`
+3. `audit-log.md`
+4. `isbn-import.md`
+5. `book-management.md`
+6. `lookup-management.md`
 
 ## Role Rules
 
@@ -35,6 +37,8 @@ Power users can create and update archive records.
 Admins can create, update, and delete archive records.
 
 Only admins can manage users.
+
+Only admins can view audit logs.
 
 ## Client Entry Points
 

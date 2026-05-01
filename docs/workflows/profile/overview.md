@@ -11,6 +11,9 @@ Profile page includes:
 2. Change password
 3. Appearance
 
+Home page includes:
+1. My Activity
+
 General includes display name.
 
 Appearance includes colour mode and colour theme.
@@ -22,6 +25,7 @@ Profile page workflows are documented in:
 2. `display-name.md`
 3. `change-password.md`
 4. `appearance.md`
+5. `activity.md`
 
 ## Role Rules
 
@@ -30,6 +34,8 @@ Profile page requires a signed-in user.
 Any enabled user with a valid JWT can access their own profile.
 
 Users cannot access or update another user's profile through Profile page workflows.
+
+Users can view only their own activity entries.
 
 ## Client Entry Points
 
@@ -44,6 +50,8 @@ Profile APIs are served under `/profile`.
 Profile APIs must require authenticated user access.
 
 The user ID must come from the validated JWT payload.
+
+The activity API must filter audit logs by the validated JWT user ID.
 
 ## Failure Handling
 

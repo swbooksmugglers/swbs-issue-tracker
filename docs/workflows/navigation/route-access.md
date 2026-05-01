@@ -28,6 +28,10 @@ Protected routes include:
 5. `/admin`
 6. `/search`
 
+Admin-only data views inside `/admin` include:
+1. Audit Log
+2. User Management
+
 SUSI public routes include:
 1. `/`
 2. `/signup`
