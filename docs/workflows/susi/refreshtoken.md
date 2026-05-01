@@ -12,6 +12,8 @@ Stored JWT must not have been issued at or before the user's last sign out time.
 
 Refresh returns a new bearer JWT.
 
+The client warns the user 60 seconds before the stored JWT expires and offers to refresh the session.
+
 ## Client Side Validation
 
 Client side validation occurs before authenticated API calls made through `apiFetch`.
@@ -21,6 +23,15 @@ On client side validation
 2. If no stored JWT exists, continue the request without an Authorization header
 3. If stored JWT exists and is not expiring soon, use it for the API call
 4. If stored JWT exists and is expiring soon, call the refresh API before the original API call
+
+The shared session expiry warning also monitors the stored JWT on authenticated client routes.
+
+On session warning
+1. Show a session expiry dialog 60 seconds before the stored JWT expires
+2. If the user chooses to stay signed in, call the refresh API with the current JWT
+3. If refresh succeeds, store the refreshed JWT and close the dialog
+4. If refresh fails or the token expires, clear the stored JWT and redirect to Sign In
+5. If the user chooses to sign out, attempt signout, clear the stored JWT, and redirect to Sign In
 
 ## Server Side Validation
 
@@ -38,6 +49,8 @@ The refresh API must require a valid bearer token. If the token is missing, inva
 6. API returns the new access token and token type
 7. Client stores the refreshed JWT
 8. Client sends the original API request with the refreshed JWT
+
+For user-initiated session extension, the client stores the refreshed JWT and closes the session expiry warning.
 
 ## Failure Workflow
 

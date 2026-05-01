@@ -54,3 +54,4 @@ If role is not `admin` or `power_user`, redirect to Home page.
 
 1. If no token exists, redirect to Sign In page
 2. If API later rejects token, clear stored token and redirect to Sign In page
+3. If the stored token expires while the user is idle, clear stored token and redirect to Sign In page
