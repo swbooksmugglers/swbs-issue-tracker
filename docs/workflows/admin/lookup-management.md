@@ -6,7 +6,10 @@ Lookup management covers:
 1. Authors
 2. Publishers
 3. Roles
-4. Exclusives / Exclusives
+4. Exclusives
+5. Eras
+6. Series
+7. Sub-series
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
@@ -18,9 +21,13 @@ Lookup names must be unique case-insensitively within the lookup type.
 
 Lookup records referenced by books must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
 
+Sub-series records are stored as child series records and are scoped to a parent series. A sub-series cannot be created without a parent series, and its name must be unique within that parent.
+
+Top-level series records support sort order. Eras and sub-series do not expose sort order in lookup management.
+
 ## Client Side Validation
 
-Client side validation occurs in the Manage Authors, Manage Publishers, Manage Roles, and Manage Exclusives modals.
+Client side validation occurs in lookup management modals, including authors, publishers, roles, exclusives, eras, series, and sub-series.
 
 On search validation failure
 1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled
@@ -59,7 +66,7 @@ If lookup record is referenced by books, apply the block-and-notify rule from `d
 
 ## Search Lookup Workflow
 
-1. User opens Manage Authors, Manage Publishers, Manage Roles, or Manage Exclusives
+1. User opens a lookup management modal
 2. User enters search query
 3. User clicks Search
 4. Client trims query and validates query length is at least 3 characters

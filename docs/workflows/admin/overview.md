@@ -32,9 +32,9 @@ Admin page workflows are documented in:
 
 ## Role Rules
 
-Power users can create and update archive records.
+Power users can create and update archive records and archive categorization lookups.
 
-Admins can create, update, and delete archive records.
+Admins can create, update, and delete archive records and archive categorization lookups.
 
 Only admins can manage users.
 

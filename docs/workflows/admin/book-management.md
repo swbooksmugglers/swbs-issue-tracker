@@ -34,12 +34,16 @@ Required book fields are:
 
 Optional book fields are:
 1. Signed
-2. Series
-3. Notes
-4. Exclusive
-5. Case type
-6. Limitation
-7. Limited edition type
+2. Era
+3. Series
+4. Sub-series
+5. Notes
+6. Exclusive
+7. Case type
+8. Limitation
+9. Limited edition type
+
+Sub-series is optional. If selected, series must also be selected, and the sub-series must belong to that series.
 
 ## Server Side Validation
 
@@ -51,6 +55,7 @@ Book APIs must validate:
 3. Required fields are present
 4. Referenced lookup IDs exist through database constraints
 5. ISBN is unique for new records
+6. Sub-series, when provided, belongs to the selected series
 
 If ISBN already exists when creating a book, return a conflict error.
 
@@ -65,7 +70,7 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 3. User clicks Search
 4. Client trims query and validates query length is at least 3 characters
 5. Client calls book search API
-6. API searches title, ISBN, linked author/contributor names, publisher, and exclusive
+6. API searches title, ISBN, linked author/contributor names, publisher, exclusive, era, series, and sub-series
 7. Client displays matching books
 
 ## Add Book Workflow

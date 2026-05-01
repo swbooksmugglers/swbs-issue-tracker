@@ -6,7 +6,7 @@ Archive filtering is client side.
 
 Each exclusive section has its own filter value.
 
-Filter matches title or author.
+Filter matches title, author, era, series, or sub-series.
 
 Exclusive sections can be collapsed and expanded.
 
@@ -18,7 +18,7 @@ On filter change:
 1. Store filter text for that exclusive
 2. Trim filter text and convert it to lowercase for matching
 3. If filter text is fewer than 3 characters after trimming whitespace, show all books for that exclusive
-4. If filter text is at least 3 characters, filter books for that exclusive by title or author
+4. If filter text is at least 3 characters, filter books for that exclusive by title, author, era, series, or sub-series
 
 On collapse toggle:
 1. Toggle collapsed state for the selected exclusive

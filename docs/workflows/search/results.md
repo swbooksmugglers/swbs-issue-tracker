@@ -23,6 +23,9 @@ Client-side result filtering matches:
 2. Author
 3. Publisher
 4. Exclusive
+5. Era
+6. Series
+7. Sub-series
 
 Client-side result filtering is inactive until filter text is at least 3 characters after trimming whitespace.
 
@@ -40,13 +43,16 @@ Search should match:
 3. Author
 4. Publisher
 5. Exclusive
+6. Era
+7. Series
+8. Sub-series
 
 ## Success Workflow
 
 1. Search Results page receives token and query
 2. Client validates query length is at least 3 characters after trimming whitespace
 3. Client calls search API
-4. API searches books by ISBN, title, author, publisher, or exclusive
+4. API searches books by ISBN, title, author, publisher, exclusive, era, series, or sub-series
 5. API returns matching books ordered by title
 6. Client renders results table
 7. Client displays book cover when available
@@ -57,12 +63,14 @@ Displayed result fields are:
 2. Title
 3. ISBN
 4. Author
-5. Publisher
-6. Exclusive
-7. Publication date
-8. MSRP
-9. Pre-signed status
-10. Notes
+5. Era
+6. Series
+7. Publisher
+8. Exclusive
+9. Publication date
+10. MSRP
+11. Pre-signed status
+12. Notes
 
 ## Empty State Workflow
 
