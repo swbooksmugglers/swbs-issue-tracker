@@ -5,7 +5,8 @@
 Lookup management covers:
 1. Authors
 2. Publishers
-3. Exclusives / Exclusives
+3. Roles
+4. Exclusives / Exclusives
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
@@ -19,7 +20,7 @@ Lookup records referenced by books must not be deleted. Delete conflict handling
 
 ## Client Side Validation
 
-Client side validation occurs in the Manage Authors, Manage Publishers, and Manage Exclusives modals.
+Client side validation occurs in the Manage Authors, Manage Publishers, Manage Roles, and Manage Exclusives modals.
 
 On search validation failure
 1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled
@@ -58,7 +59,7 @@ If lookup record is referenced by books, apply the block-and-notify rule from `d
 
 ## Search Lookup Workflow
 
-1. User opens Manage Authors, Manage Publishers, or Manage Exclusives
+1. User opens Manage Authors, Manage Publishers, Manage Roles, or Manage Exclusives
 2. User enters search query
 3. User clicks Search
 4. Client trims query and validates query length is at least 3 characters

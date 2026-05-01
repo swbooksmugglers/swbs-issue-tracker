@@ -25,7 +25,7 @@ On add or edit validation failure
 Required book fields are:
 1. ISBN
 2. Title
-3. Author
+3. At least one author row with an author and role
 4. Publication date
 5. Printing
 6. Book type
@@ -65,7 +65,7 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 3. User clicks Search
 4. Client trims query and validates query length is at least 3 characters
 5. Client calls book search API
-6. API searches title, ISBN, author, publisher, and exclusive
+6. API searches title, ISBN, linked author/contributor names, publisher, and exclusive
 7. Client displays matching books
 
 ## Add Book Workflow
