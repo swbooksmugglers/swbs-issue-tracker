@@ -11,6 +11,7 @@ Email must be valid email format.
 Password must meet the following criteria:
 - MIN = 8
 - MAX = 64
+- Must not contain the user's email, email local part, first name, or last name
 
 Password and confirm password must match.
 
@@ -43,6 +44,7 @@ The signup API must validate:
 3. Email is present and uses a valid email format
 4. Password is present
 5. Password length is between MIN and MAX
+6. Password does not contain the user's email, email local part, first name, or last name
 
 If invalid parameters are used, return an error and do not create a user.
 

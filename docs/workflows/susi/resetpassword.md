@@ -11,6 +11,7 @@ Reset password token must not be expired.
 New password must meet the following criteria:
 - MIN = 8
 - MAX = 64
+- Must not contain the user's email, email local part, first name, or last name
 
 New password and confirm password must match.
 
@@ -43,6 +44,7 @@ The reset-password API must validate:
 5. Token purpose is `password_reset`
 6. Token is not expired
 7. Token has not already been used (token `iat` must be after `users.password_reset_at`)
+8. Password does not contain the user's email, email local part, first name, or last name
 
 If invalid parameters are used, return an error and do not update the password.
 

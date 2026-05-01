@@ -39,6 +39,8 @@ If credentials do not match a user record, return an unauthorized error.
 
 If credentials match but the user account is not activated or disabled, return a forbidden error.
 
+The sign in endpoint is rate limited. Add progressive per-account throttling only if abuse is observed; avoid permanent account lockouts because they can create denial-of-service risk.
+
 ## Success Workflow
 
 1. Valid email format must be entered into the Email input
