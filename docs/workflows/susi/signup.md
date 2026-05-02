@@ -19,6 +19,10 @@ New accounts must be created disabled until the user activates the account from 
 
 Email must be unique.
 
+When `SIGNUP_MODE=allowlist`, the email must exist in `authorized_signup_email`.
+
+When `SIGNUP_MODE=open`, any valid unique email may sign up.
+
 ## Client Side Validation
 
 Client side validation occurs when Create account button is clicked.
@@ -45,10 +49,13 @@ The signup API must validate:
 4. Password is present
 5. Password length is between MIN and MAX
 6. Password does not contain the user's email, email local part, first name, or last name
+7. If `SIGNUP_MODE=allowlist`, email exists in `authorized_signup_email`
 
 If invalid parameters are used, return an error and do not create a user.
 
 If the email already exists, return a conflict error and do not create a duplicate user.
+
+If signup is allowlist-gated and the email is not authorized, return a forbidden response with code `SIGNUP_NOT_READY` and do not create a user.
 
 ## Success Workflow
 
@@ -75,9 +82,12 @@ If the email already exists, return a conflict error and do not create a duplica
 
 1. If the email already exists, display the API error message
 2. If the signup request is invalid, display the API error message
-3. If the activation email fails to send, display the API error message
-4. If the API or network call fails, display a network error message
-5. Keep the user on the Create account page
+3. If signup is allowlist-gated and the email is not authorized, display:
+   `We're not ready for new guests yet. We'll announce our grand opening in the SW Book Smugglers Community on Facebook, so stay tuned.`
+4. The Facebook community phrase links to `https://www.facebook.com/groups/starwarsbooksmugglers`
+5. If the activation email fails to send, display the API error message
+6. If the API or network call fails, display a network error message
+7. Keep the user on the Create account page
 
 ## Activation Workflow
 
