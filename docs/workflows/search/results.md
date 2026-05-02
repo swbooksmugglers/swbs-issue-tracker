@@ -4,40 +4,22 @@
 
 Search Results requires a signed-in user with a valid JWT.
 
-Search query comes from route state.
-
-Search results can be filtered client side.
+Search query and optional filters come from route state.
 
 ## Client Side Validation
 
-Client side validation occurs when Search Results page loads.
-
-On client side validation:
+On page load:
 1. If no token exists, redirect to Sign In page
 2. If query is fewer than 3 characters after trimming whitespace, do not call search API
-3. If query is valid, clear previous results and filter state
-4. Call search API with trimmed query
-
-Client-side result filtering matches:
-1. Title
-2. Author
-3. Publisher
-4. Exclusive
-5. Era
-6. Series
-7. Sub-series
-
-Client-side result filtering is inactive until filter text is at least 3 characters after trimming whitespace.
+3. If query is valid, clear previous results and call the search API with the trimmed query and any active filters
 
 ## Server Side Validation
-
-Server side validation must occur at the API level.
 
 The search API must validate:
 1. Caller is authenticated
 2. Query is at least 3 characters
 
-Search should match:
+Search matches books by:
 1. ISBN
 2. Title
 3. Author
@@ -49,32 +31,31 @@ Search should match:
 
 ## Success Workflow
 
-1. Search Results page receives token and query
+1. Search Results page receives token, query, and optional filters from route state
 2. Client validates query length is at least 3 characters after trimming whitespace
-3. Client calls search API
-4. API searches books by ISBN, title, author, publisher, exclusive, era, series, or sub-series
-5. API returns matching books ordered by title
-6. Client renders results table
-7. Client displays book cover when available
-8. User can open a read-only book details dialog from the row action icon
-9. User can enter a filter of at least 3 characters to narrow results locally
+3. Client calls search API with query and any active filter params
+4. API returns matching books ordered by title
+5. Client renders results table
+6. Client displays book cover when available
+7. User can open a read-only book details dialog from the row action icon
+8. User can click **Filter** to open the filter dialog and narrow results server-side
 
-Displayed result fields are:
+Displayed result fields:
 1. Cover
 2. Title
 3. ISBN
 4. Author
-5. Era
-6. Series
-7. Publisher
-8. Exclusive
-9. Publication date
-10. Row action to view details
+5. Publisher
+6. Publication date
+7. Row action to view details
+
+## Filter Workflow
+
+Filter behaviour is documented in `docs/context/workflows/search/advanced-search.md`.
 
 ## Empty State Workflow
 
 1. If API returns no results, display empty-results message
-2. If local filter excludes all results, display no-results-match-filter message
 
 ## Failure Workflow
 

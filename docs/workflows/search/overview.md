@@ -7,9 +7,9 @@ Search lets signed-in users find books in the archive by title, ISBN, author, pu
 ## Workflows
 
 Search workflows are documented in:
-1. `header-search.md`
-2. `results.md`
-3. `advanced-search.md`
+1. `header-search.md` — global search bar in the header
+2. `results.md` — search results page behaviour
+3. `advanced-search.md` — filter dialog on the search results page
 
 ## Role Rules
 
@@ -21,13 +21,17 @@ Any enabled user with a valid JWT can search books.
 
 Search is available from the header on authenticated pages.
 
+The Filter dialog is available on the Search Results page only.
+
 Search results are displayed on `/search`.
 
 ## Server Entry Points
 
-Book search API is served by `/book/search`.
+Book search API is served by `GET /api/book/search`.
 
-The API must require authenticated user access.
+Filter options are served by `GET /api/book/search-filters`.
+
+Both APIs require authenticated user access.
 
 ## Failure Handling
 

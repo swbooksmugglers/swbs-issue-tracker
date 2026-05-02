@@ -1,48 +1,42 @@
-# Advanced Search Workflow
+# Filter Workflow
 
 ## Rules
 
-Advanced search lets signed-in users choose whether a search should target book metadata, summaries, or both.
+The Filter dialog lets users on the Search Results page narrow results by categorical attributes using server-side filtering.
 
-User must be signed in to open the header and access Advanced search.
+Filter is only available on the Search Results page. It is not accessible from the header or other pages.
 
-Search query must be at least 3 characters after trimming whitespace.
+## Filter Options
 
-## Client Side Validation
+Users can filter by:
+1. Publisher
+2. Book type
+3. Series
+4. Sub-series (only enabled when a series is selected; clears when series changes)
+5. Era
+6. Exclusive
+7. Limited edition type
+8. Signed (Any / Yes / No)
 
-Client side validation occurs in the Advanced Search dialog.
-
-On click:
-1. Open Advanced Search dialog
-2. Display a query field and scope selector
-
-On submit validation failure:
-1. If query is fewer than 3 characters after trimming, do not navigate
-2. Do not trigger a backend call
-
-## Server Side Validation
-
-Server side validation occurs in the book search API.
-
-The search API must validate:
-1. Caller is authenticated
-2. Query is present
-3. Query is at least 3 characters after trimming
-4. Scope is one of `books`, `summaries`, or `all`
+Filter options are loaded from `GET /api/book/search-filters` when the dialog is first opened.
 
 ## Current Workflow
 
-1. User clicks Advanced search in the header
-2. Client opens Advanced Search dialog
-3. User enters a query
-4. User selects Books, Summaries, or All
-5. User clicks Search
-6. Client navigates to `/search` with token, query, and scope in route state
-7. Search Results calls `/api/book/search?q=<query>&scope=<scope>`
+1. User performs a search and lands on Search Results
+2. User clicks the **Filter** button next to the results heading
+3. Client opens the Filter dialog, pre-populated with any active filters
+4. User adjusts filter selections
+5. User clicks **Apply** — client re-navigates to `/search` with the same query and new filters in route state
+6. Search Results re-runs the search with filter params appended to the API call
+7. User clicks **Clear** — all filters are reset and the search is re-run unfiltered
+8. User clicks **Cancel** — dialog closes, active filters and results are unchanged
 
-## Future Workflow Notes
+## Server Side
 
-Supported scopes:
-1. `books` searches title, ISBN, author/contributor names, publisher, exclusive, era, series, and sub-series
-2. `summaries` searches summary embeddings with vector similarity
-3. `all` combines book metadata and summary matches
+Filter params are passed as optional query params on `GET /api/book/search`:
+- `publisher_id`, `book_type_id`, `series_id`, `sub_series_id`, `era_id`, `exclusive_id`, `limited_edition_type_id` (integers)
+- `signed` (boolean)
+
+All filter params are optional. Omitted params are not applied.
+
+Filter options are served by `GET /api/book/search-filters` which returns available values for all filter dimensions.
