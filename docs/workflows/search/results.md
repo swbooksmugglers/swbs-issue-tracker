@@ -40,6 +40,7 @@ Search matches books by:
 6. Client displays book cover when available
 7. User can open a read-only book details dialog from the row action icon
 8. User can click **Filter** to open the filter dialog and narrow results server-side
+9. User can add a row's book to their collection from the row action icon
 
 Displayed result fields:
 1. Cover
@@ -48,7 +49,21 @@ Displayed result fields:
 4. Author
 5. Publisher
 6. Publication date
-7. Row action to view details
+7. Row action to add to collection
+8. Row action to view details
+
+## Add To Collection Workflow
+
+Add to collection is a per-row action.
+
+On add:
+1. Client calls `POST /api/collection/items` with the selected `book_id`
+2. API creates a new collected item scoped to the authenticated user
+3. Duplicate copies of the same book are allowed
+4. Client displays a success snackbar
+5. Snackbar includes an edit action for reading status, notes, signed, purchase price, date purchased, and customizations
+
+Adding a book to a collection must not edit the book entity.
 
 ## Filter Workflow
 

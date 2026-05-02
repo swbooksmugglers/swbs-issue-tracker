@@ -24,6 +24,12 @@ Read workflow docs with `docs/context/index.md`. Shared auth, permissions, secur
 | Exclusives | [archive/exclusives.md](archive/exclusives.md) |
 | Filtering | [archive/filtering.md](archive/filtering.md) |
 
+## Collection
+
+| Workflow | Document |
+|---|---|
+| Overview | [collection/overview.md](collection/overview.md) |
+
 ## Navigation
 
 | Workflow | Document |

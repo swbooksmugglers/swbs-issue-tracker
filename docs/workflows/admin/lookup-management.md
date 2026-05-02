@@ -10,6 +10,7 @@ Lookup management covers:
 5. Eras
 6. Series
 7. Sub-series
+8. Collection customizations
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
@@ -19,15 +20,15 @@ Deleting lookup records requires role `admin`.
 
 Lookup names must be unique case-insensitively within the lookup type.
 
-Lookup records referenced by books must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
+Lookup records referenced by books or collected items must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
 
 Sub-series records are stored as child series records and are scoped to a parent series. A sub-series cannot be created without a parent series, and its name must be unique within that parent.
 
-Top-level series records support sort order. Eras and sub-series do not expose sort order in lookup management.
+Top-level series records support sort order. Eras, sub-series, and collection customizations do not expose sort order in lookup management.
 
 ## Client Side Validation
 
-Client side validation occurs in lookup management modals, including authors, publishers, roles, exclusives, eras, series, and sub-series.
+Client side validation occurs in lookup management modals, including authors, publishers, roles, exclusives, eras, series, sub-series, and collection customizations.
 
 On search validation failure
 1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled

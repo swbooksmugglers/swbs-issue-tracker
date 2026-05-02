@@ -42,3 +42,5 @@ My Activity displays:
 5. Message
 
 Before and after JSON snapshots are not displayed in My Activity.
+
+Collection add, edit, and remove actions appear in My Activity when recorded as audit log entries for the current user.
