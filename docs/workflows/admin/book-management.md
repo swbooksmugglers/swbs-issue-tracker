@@ -142,14 +142,19 @@ Backend endpoints:
 2. `PUT /admin/book/{book_id}/summary` updates a summary and embedding
 3. `DELETE /admin/book/{book_id}/summary` clears the summary and embedding
 4. `GET /admin/book-summary/google-books/{isbn}` retrieves a suggested summary from Google Books
+5. `POST /admin/book-summary/google-books/batch` imports missing summaries from Google Books
 
 Add and edit summary require power user access.
 
 Delete summary requires admin access.
 
-Google Books summary retrieval requires power user access and does not write to the database.
+Google Books single-summary retrieval requires power user access and does not write to the database.
+
+Google Books batch summary import requires power user access. It scans books with no summary, fetches by ISBN, saves summaries when found, and continues if an individual lookup fails.
 
 Summary add, edit, and delete write audit entries with `entity_type = "book summary"`.
+
+Batch summary import saves each found summary as a new `book summary` audit entry.
 
 ## ISBN Import Summary Workflow
 

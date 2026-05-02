@@ -62,9 +62,18 @@ Prefilled fields can include:
 3. Publication date
 4. MSRP
 5. Notes
-6. Author
-7. Publisher
-8. Book type
+6. Summary
+7. Author
+8. Publisher
+9. Book type
+
+## Batch Summary Import Workflow
+
+Batch Summary Import requires role `admin` or `power_user`.
+
+The batch import scans local books that have no summary, looks up Google Books by each book ISBN, and saves the returned summary when one is found.
+
+Missing Google Books summaries and individual lookup failures do not stop the batch. The API returns checked, updated, unavailable, and failed counts for the client success message.
 
 ## Failure Workflow
 
