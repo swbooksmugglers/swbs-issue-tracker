@@ -11,10 +11,20 @@ Valid colour modes are:
 
 Valid themes are:
 1. `default`
-2. `imperial`
-3. `rebel`
-4. `jedi`
-5. `crawl`
+2. `mustafar`
+3. `endor`
+4. `hoth`
+5. `dagobah`
+6. `coruscant`
+7. `tatooine`
+
+Legacy saved value `imperial` is accepted for compatibility and displayed as `mustafar`.
+
+Legacy saved value `rebel` is accepted for compatibility and displayed as `endor`.
+
+Legacy saved value `jedi` is accepted for compatibility and displayed as `hoth`.
+
+Legacy saved value `crawl` is accepted for compatibility and displayed as `dagobah`.
 
 Profile updates must upsert the profile row when one does not already exist.
 
