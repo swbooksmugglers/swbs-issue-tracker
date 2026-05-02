@@ -8,7 +8,9 @@ Search query must be at least 3 characters after trimming whitespace.
 
 Search is submitted from the global header.
 
-The simple header search uses the combined book metadata and summary semantic search.
+The simple header search uses combined book metadata and summary semantic search when `SEMANTIC_SEARCH_ENABLED=true`.
+
+When `SEMANTIC_SEARCH_ENABLED=false`, header search keeps using `scope=all`, but the API returns metadata matches only.
 
 ## Client Side Validation
 
