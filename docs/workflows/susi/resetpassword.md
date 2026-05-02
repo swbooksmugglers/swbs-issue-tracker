@@ -61,7 +61,7 @@ If the token is invalid, expired, already used, or has the wrong purpose, return
 7. API validates the request
 8. API decodes and validates the reset token
 9. API hashes the new password
-10. API updates the user's password, sets `password_reset_at = NOW()`, and sets `last_signout_at = NOW()` to invalidate existing sessions
+10. API updates the user's password, sets `password_reset_at = NOW()`, clears `password_setup_pending`, and sets `last_signout_at = NOW()` to invalidate existing sessions
 11. API returns a success response
 12. Client redirects to the Sign In page
 13. Sign In page displays password reset success notice

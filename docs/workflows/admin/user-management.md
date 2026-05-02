@@ -31,6 +31,8 @@ User search is inactive until the search text is at least 3 characters after tri
 
 Protected users must have role, enabled toggle, and delete controls disabled.
 
+Users with password setup pending should show a pending setup status and a resend setup email action.
+
 ## Server Side Validation
 
 Server side validation must occur at the API level.
@@ -54,6 +56,40 @@ If target user is protected, return forbidden.
 3. API lists users ordered by ID
 4. API marks the protected admin account when configured
 5. Client renders user table
+
+## Add User Workflow
+
+1. Admin opens Add User
+2. Admin enters first name, last name, and email
+3. Client calls create user API
+4. API validates admin access
+5. API creates the user with role `user`, enabled `true`, and `password_setup_pending` set to `true`
+6. API stores a hashed secure random 32-character temporary password
+7. API sends a password setup email using the password reset token flow
+8. Client adds the user to the table
+9. Client displays success message
+
+The temporary password must never be logged, returned, emailed, audited, or displayed.
+
+If the setup email fails after the user is created, the user remains setup-pending and the client displays resend guidance.
+
+If the email already exists, return conflict and do not create a duplicate user.
+
+If the email matches the protected admin account, return forbidden.
+
+## Resend Password Setup Workflow
+
+1. Admin clicks resend setup email for a setup-pending user
+2. Client calls resend password setup API
+3. API validates admin access
+4. API validates target user exists and is not protected
+5. API validates `password_setup_pending` is true
+6. API sends a fresh password setup email using a password reset token
+7. Client displays success message
+
+If `password_setup_pending` is false, return conflict and do not send an email.
+
+Once the user sets their password, password setup is no longer pending and resend is disabled.
 
 ## Update User Role Workflow
 
@@ -80,6 +116,8 @@ Valid roles are:
 6. Client updates the user row locally
 7. Client displays success message
 
+Users with `password_setup_pending` cannot sign in until they set their password through the email flow.
+
 ## Delete User Workflow
 
 1. Admin clicks delete icon for a user
@@ -100,4 +138,5 @@ Valid roles are:
 1. If loading users fails, display failed-to-load message
 2. If update fails, keep local user state unchanged and display API error message
 3. If delete is blocked or fails, close confirmation dialog and display API error message
-4. If network fails, display network error message
+4. If add user or resend setup email fails, keep local user state unchanged unless the API returned a created setup-pending user
+5. If network fails, display network error message
