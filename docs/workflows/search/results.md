@@ -28,13 +28,14 @@ Search matches books by:
 6. Era
 7. Series
 8. Sub-series
+9. Book summary semantic similarity when the search scope is `all` or `summaries`
 
 ## Success Workflow
 
 1. Search Results page receives token, query, and optional filters from route state
 2. Client validates query length is at least 3 characters after trimming whitespace
-3. Client calls search API with query and any active filter params
-4. API returns matching books ordered by title
+3. Client calls search API with `scope=all` and any active filter params
+4. API returns matching metadata and summary semantic results
 5. Client renders results table
 6. Client displays book cover when available
 7. User can open a read-only book details dialog from the row action icon
