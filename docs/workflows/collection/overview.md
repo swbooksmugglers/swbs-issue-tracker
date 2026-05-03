@@ -14,7 +14,9 @@ Users can edit only collected-item fields:
 3. Reading status
 4. Purchase price
 5. Date purchased
-6. Collection customizations
+6. Sold price
+7. Date sold
+8. Collection customizations
 
 Users cannot edit the referenced book from the Collection page.
 

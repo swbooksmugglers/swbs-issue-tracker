@@ -11,6 +11,7 @@ Lookup management covers:
 6. Series
 7. Sub-series
 8. Collection customizations
+9. Reading statuses
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
@@ -24,7 +25,9 @@ Lookup records referenced by books or collected items must not be deleted. Delet
 
 Sub-series records are stored as child series records and are scoped to a parent series. A sub-series cannot be created without a parent series, and its name must be unique within that parent.
 
-Top-level series records support sort order. Eras, sub-series, and collection customizations do not expose sort order in lookup management.
+Top-level series records, eras, and reading statuses support sort order. Sub-series and collection customizations do not expose sort order in lookup management.
+
+Reading statuses referenced by collected items must not be deleted.
 
 ## Client Side Validation
 
@@ -64,6 +67,22 @@ If duplicate name exists, return conflict.
 If lookup record does not exist, return not found.
 
 If lookup record is referenced by books, apply the block-and-notify rule from `docs/context/development/database-patterns.md`.
+
+## Manage Sort Order Workflow
+
+Sort order management is available for eras, series, and reading statuses.
+
+1. User clicks Sort Order in the Archive Management section
+2. Client opens the Manage Sort Order modal
+3. User selects an entity type (Era, Series, or Reading Status)
+4. Client fetches all items for the selected entity, ordered by sort_order
+5. Client displays items as a draggable list; each row shows the item name and its computed sort_order (position × 10)
+6. User drags items to reorder
+7. User clicks Save
+8. Client sends PATCH for each item whose position changed, with sort_order derived from its new position × 10
+9. Client closes modal and displays success message
+
+If save fails, display error message and keep modal open.
 
 ## Search Lookup Workflow
 

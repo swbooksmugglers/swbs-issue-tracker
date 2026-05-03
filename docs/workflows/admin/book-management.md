@@ -28,7 +28,7 @@ Required book fields are:
 3. At least one author row with an author and role
 4. Publication date
 5. Printing
-6. Book type
+6. Format
 7. MSRP
 8. Publisher
 

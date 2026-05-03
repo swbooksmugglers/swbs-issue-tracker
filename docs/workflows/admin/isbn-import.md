@@ -65,7 +65,7 @@ Prefilled fields can include:
 6. Summary
 7. Author
 8. Publisher
-9. Book type
+9. Format
 
 ## Batch Summary Import Workflow
 
