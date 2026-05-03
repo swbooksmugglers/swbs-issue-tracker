@@ -17,6 +17,7 @@ Users can filter by:
 6. Exclusive
 7. Limited edition type
 8. Signed (Any / Yes / No)
+9. Continuity
 
 Filter options are loaded from `GET /api/book/search-filters` when the dialog is first opened.
 
@@ -34,7 +35,7 @@ Filter options are loaded from `GET /api/book/search-filters` when the dialog is
 ## Server Side
 
 Filter params are passed as optional query params on `GET /api/book/search`:
-- `publisher_id`, `book_type_id`, `series_id`, `sub_series_id`, `era_id`, `exclusive_id`, `limited_edition_type_id` (integers)
+- `publisher_id`, `book_type_id`, `series_id`, `sub_series_id`, `continuity_id`, `era_id`, `exclusive_id`, `limited_edition_type_id` (integers)
 - `signed` (boolean)
 
 All filter params are optional. Omitted params are not applied.

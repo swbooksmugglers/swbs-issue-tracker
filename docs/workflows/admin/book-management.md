@@ -34,15 +34,16 @@ Required book fields are:
 
 Optional book fields are:
 1. Signed
-2. Era
-3. Series
-4. Sub-series
-5. Notes
-6. Exclusive
-7. Case type
-8. Limitation
-9. Limited edition type
-10. Summary
+2. Continuity
+3. Era
+4. Series
+5. Sub-series
+6. Notes
+7. Exclusive
+8. Case type
+9. Limitation
+10. Limited edition type
+11. Summary
 
 Sub-series is optional. If selected, series must also be selected, and the sub-series must belong to that series.
 
