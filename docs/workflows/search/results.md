@@ -41,8 +41,9 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 5. Client renders results table
 6. Client displays book cover when available
 7. User can open a read-only book details dialog from the row action icon
-8. User can click **Filter** to open the filter dialog and narrow results server-side
+8. User can click **Filter** to open the filter dialog and narrow results server-side (Filter only shown when results exist)
 9. User can add a row's book to their collection from the row action icon
+10. After a valid search, client always displays the ISBN Import prompt below results
 
 Displayed result fields:
 1. Cover
@@ -70,6 +71,23 @@ Adding a book to a collection must not edit the book entity.
 ## Filter Workflow
 
 Filter behaviour is documented in `docs/context/workflows/search/advanced-search.md`.
+
+## ISBN Import Workflow
+
+Available to any authenticated user after a valid search is performed, regardless of result count.
+
+1. Client displays "Can't find what you're looking for? Import it by ISBN." with an **ISBN Import** button
+2. User clicks **ISBN Import** — opens the Import by ISBN modal
+3. User enters an ISBN and clicks **Look up**
+4. Client calls `GET /api/book/isbn/{isbn}`
+5. API normalises ISBN, checks catalog for duplicate (409 if exists), calls ISFDB, fetches Google Books summary
+6. If no record found, display error — user can try a different ISBN
+7. If found, modal advances to read-only confirmation showing: title, author(s), publisher, book type, ISBN, publication date, MSRP
+8. User checks or unchecks **Add to my collection** (checked by default)
+9. User clicks **Add** — client calls `POST /api/book`
+10. API resolves author and publisher names (lookup-or-create), inserts book, then best-effort adds to collection if requested
+11. If collection add fails, book is still added to catalog and user is informed via snackbar to find it in search
+12. Modal closes and success message is shown in snackbar
 
 ## Empty State Workflow
 

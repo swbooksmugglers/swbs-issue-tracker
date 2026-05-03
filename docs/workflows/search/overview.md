@@ -31,7 +31,11 @@ Book search API is served by `GET /api/book/search`.
 
 Filter options are served by `GET /api/book/search-filters`.
 
-Both APIs require authenticated user access.
+ISBN lookup is served by `GET /api/book/isbn/{isbn}`.
+
+Add book to catalog is served by `POST /api/book`.
+
+All APIs require authenticated user access.
 
 ## Failure Handling
 
