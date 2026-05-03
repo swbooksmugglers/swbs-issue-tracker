@@ -16,7 +16,7 @@ Home page includes:
 
 General includes display name.
 
-Appearance includes colour mode and colour theme.
+Appearance includes colour mode, affiliation, and colour theme.
 
 ## Workflows
 

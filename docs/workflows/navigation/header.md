@@ -10,7 +10,7 @@ Header displays global search.
 
 Header displays account menu button.
 
-Greeting uses display name when available and first name from JWT otherwise.
+Account menu button displays the user's current rank based on their affiliation and collected item count.
 
 ## Client Side Validation
 
@@ -19,9 +19,10 @@ Client side validation occurs when Header renders.
 On render:
 1. Decode token payload
 2. Read first name and role from token
-3. Read display name from theme preference context
-4. Display greeting using display name when set
-5. Fall back to first name when display name is not set
+3. Read display name, affiliation, and collected item count from theme preference context
+4. Compute rank from affiliation and collected item count
+5. Display rank and name as the account menu button label (e.g. "Padawan Herm")
+6. Use display name when set, fall back to first name from token
 
 ## Navigation Workflow
 
