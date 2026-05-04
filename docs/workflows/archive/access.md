@@ -11,7 +11,7 @@ Valid session behavior follows `docs/context/auth/session.md`.
 Client side validation occurs when Archive page loads.
 
 On client side validation:
-1. Read token from route state or stored token
+1. Read stored token
 2. If no token exists, redirect to Sign In page
 3. If token exists, render Header and Archive content
 

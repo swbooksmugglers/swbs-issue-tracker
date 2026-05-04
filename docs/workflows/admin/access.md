@@ -13,7 +13,7 @@ Admin page access requires role `admin` or `power_user`.
 Client side validation occurs when the Admin page loads.
 
 On client side validation:
-1. Read token from route state or stored token
+1. Read stored token
 2. If no token exists, redirect to Sign In page
 3. Decode token role
 4. If role is not `admin` or `power_user`, redirect to Home page

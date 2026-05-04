@@ -37,7 +37,7 @@ If query is invalid, return an unprocessable entity error.
 2. User clicks Search or presses Enter
 3. Client trims query
 4. Client validates query length is at least 3 characters
-5. Client navigates to `/search` with token and query in route state
+5. Client navigates to `/search` with query in route state
 6. Search Results page performs the backend search with `scope=all`
 
 ## Failure Workflow

@@ -15,7 +15,7 @@ If no profile row exists, default profile values must be returned.
 Client side validation occurs when the Profile page loads.
 
 On client side validation:
-1. Read token from route state or stored token
+1. Read stored token
 2. If no token exists, redirect to Sign In page
 3. Decode token to get the user's first name
 4. Render Profile page with Header

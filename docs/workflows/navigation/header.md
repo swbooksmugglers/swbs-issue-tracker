@@ -2,7 +2,7 @@
 
 ## Rules
 
-Header requires a valid token prop.
+Header reads the stored token directly.
 
 Header displays app name.
 
@@ -27,7 +27,7 @@ On render:
 ## Navigation Workflow
 
 1. User clicks app name
-2. Client navigates to Home page with current token state
+2. Client navigates to Home page
 
 ## Search Workflow
 

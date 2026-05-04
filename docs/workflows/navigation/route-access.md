@@ -2,7 +2,7 @@
 
 ## Rules
 
-Authenticated routes must require a stored or route-state token.
+Authenticated routes must require a stored token.
 
 If no token exists, redirect to Sign In page.
 
@@ -12,11 +12,9 @@ Unknown routes redirect to Sign In page.
 
 Client side validation occurs when protected pages load.
 
-Protected pages read token from:
-1. Route state
-2. Stored token
+Protected pages read the stored token.
 
-If neither source contains a token, protected page redirects to Sign In page.
+If no stored token exists, protected page redirects to Sign In page.
 
 ## Protected Routes
 

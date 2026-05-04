@@ -34,7 +34,7 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 
 ## Success Workflow
 
-1. Search Results page receives token, query, and optional filters from route state
+1. Search Results page reads stored token for auth; receives query and optional filters from route state
 2. Client validates query length is at least 3 characters after trimming whitespace
 3. Client calls search API with `scope=all` and any active filter params
 4. API returns matching metadata results and, when enabled, summary semantic results

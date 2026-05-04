@@ -24,4 +24,4 @@ Profile, Archive, Collection, Support, About, and Sign out are visible to signed
 
 Authenticated pages render the shared Header component.
 
-Header actions navigate with current token in route state when needed.
+Header reads the stored token directly to populate the account menu.
