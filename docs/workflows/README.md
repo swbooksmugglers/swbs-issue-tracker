@@ -40,7 +40,7 @@ Read workflow docs with `docs/context/index.md`. Shared auth, permissions, secur
 | Route Access | [navigation/route-access.md](navigation/route-access.md) |
 | Book Cover | [navigation/book-cover.md](navigation/book-cover.md) |
 
-## Profile
+## Settings
 
 | Workflow | Document |
 |---|---|

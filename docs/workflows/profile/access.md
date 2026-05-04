@@ -1,4 +1,4 @@
-# Profile Access Workflow
+# Settings Access Workflow
 
 ## Rules
 
@@ -12,13 +12,13 @@ If no profile row exists, default profile values must be returned.
 
 ## Client Side Validation
 
-Client side validation occurs when the Profile page loads.
+Client side validation occurs when the Settings page loads.
 
 On client side validation:
 1. Read stored token
 2. If no token exists, redirect to Sign In page
 3. Decode token to get the user's first name
-4. Render Profile page with Header
+4. Render Settings page with Header
 5. Use display name from profile context when available
 6. Fall back to first name when display name is not set
 

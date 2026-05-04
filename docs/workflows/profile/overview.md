@@ -1,12 +1,12 @@
-# Profile Page Workflow Overview
+# Settings Page Workflow Overview
 
 ## Purpose
 
-The Profile page lets a signed-in user manage personal settings and password.
+The Settings page lets a signed-in user manage personal settings and password.
 
 ## Sections
 
-Profile page includes:
+Settings page includes:
 1. General
 2. Change password
 3. Appearance
@@ -20,7 +20,7 @@ Appearance includes colour mode, affiliation, and colour theme.
 
 ## Workflows
 
-Profile page workflows are documented in:
+Settings page workflows are documented in:
 1. `access.md`
 2. `display-name.md`
 3. `change-password.md`
@@ -29,17 +29,17 @@ Profile page workflows are documented in:
 
 ## Role Rules
 
-Profile page requires a signed-in user.
+Settings page requires a signed-in user.
 
 Any enabled user with a valid JWT can access their own profile.
 
-Users cannot access or update another user's profile through Profile page workflows.
+Users cannot access or update another user's profile through Settings page workflows.
 
 Users can view only their own activity entries.
 
 ## Client Entry Points
 
-Profile page is available from the header account menu for signed-in users.
+Settings page is available from the header account menu for signed-in users.
 
 If the user has no token, redirect to the Sign In page.
 

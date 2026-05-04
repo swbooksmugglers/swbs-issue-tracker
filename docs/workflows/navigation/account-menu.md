@@ -6,7 +6,7 @@ Account menu requires signed-in user context.
 
 Admin menu item is visible only when role is `admin` or `power_user`.
 
-Profile, Archive, Collection, Support, About, and Sign out are visible to signed-in users.
+Settings, Support, About, and Sign out are visible to signed-in users.
 
 ## Client Side Validation
 
@@ -26,13 +26,11 @@ On render:
 5. Client performs selected action
 
 Menu actions are:
-1. Admin: navigate to `/admin`
-2. Profile: navigate to `/profile`
-3. Archive: navigate to `/archive`
-4. Collection: navigate to `/collection`
-5. Support: open Support modal
-6. About: open About modal
-7. Sign out: call signout workflow
+1. Admin: navigate to `/admin` (admin and power_user only; shown at top with divider below)
+2. Settings: navigate to `/settings`
+3. Support: open Support modal
+4. About: open About modal
+5. Sign out: call signout workflow
 
 ## Failure Workflow
 

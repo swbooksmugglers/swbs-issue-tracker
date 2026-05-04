@@ -20,7 +20,7 @@ If no stored token exists, protected page redirects to Sign In page.
 
 Protected routes include:
 1. `/home`
-2. `/profile`
+2. `/settings`
 3. `/archive`
 4. `/collection`
 5. `/admin`

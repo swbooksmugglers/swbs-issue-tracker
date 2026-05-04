@@ -18,7 +18,13 @@ Header is shown on authenticated app pages.
 
 Admin menu item is visible only for `admin` and `power_user` roles.
 
-Profile, Archive, Collection, Support, About, and Sign out are visible to signed-in users.
+Settings, Support, About, and Sign out are visible to all signed-in users.
+
+## Navigation Tabs
+
+Header renders a tab row below the top bar with: Home, Archive, My Collection.
+
+Active tab is highlighted based on the current route.
 
 ## Client Entry Points
 
