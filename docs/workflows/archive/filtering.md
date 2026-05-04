@@ -2,11 +2,13 @@
 
 ## Rules
 
-Archive filtering is client side.
+Archive filtering and sorting are client side.
 
-Each exclusive section has its own filter value.
+Each exclusive section has its own filter value and its own sort state.
 
 Filter matches title, author, era, series, or sub-series.
+
+Sorting is available by title, ISBN, author, publisher, and publication date. Each exclusive section sorts independently.
 
 Exclusive sections can be collapsed and expanded.
 

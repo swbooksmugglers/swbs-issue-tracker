@@ -39,10 +39,11 @@ Power users can add and rename collection customizations from Admin lookup manag
 
 1. User opens Collection from the account menu
 2. Client loads the authenticated user's default collection
-3. User filters by catalog fields, reading status, signed, customization, purchase date, or text search
-4. User opens read-only book details from a row action
-5. User edits collected-item fields from a row action
-6. User removes a collected item after simple confirmation
+3. User filters by catalog fields, reading status, signed, customization, purchase date, or text search (filter button shown when results exist or when filters are active)
+4. User sorts the table by title, author, reading status, or signed using column headers
+5. User opens read-only book details from a row action
+6. User edits collected-item fields from a row action
+7. User removes a collected item after simple confirmation
 
 Collection add, edit, and remove actions are recorded in the audit log and appear in the user's My Activity list on Home.
 

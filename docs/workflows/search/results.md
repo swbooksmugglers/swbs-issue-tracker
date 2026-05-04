@@ -41,9 +41,10 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 5. Client renders results table
 6. Client displays book cover when available
 7. User can open a read-only book details dialog from the row action icon
-8. User can click **Filter** to open the filter dialog and narrow results server-side (Filter only shown when results exist)
-9. User can add a row's book to their collection from the row action icon
-10. After a valid search, client always displays the ISBN Import prompt below results
+8. User can click **Filter** to open the filter dialog and narrow results server-side (Filter shown when results exist or when filters are active)
+9. User can sort results by title, ISBN, author, publisher, or publication date using column headers
+10. User can add a row's book to their collection from the row action icon
+11. After a valid search, client always displays the ISBN Import prompt below results
 
 Displayed result fields:
 1. Cover

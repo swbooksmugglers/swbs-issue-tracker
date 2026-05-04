@@ -16,12 +16,15 @@ Power users and regular users must not see audit log data or controls.
 2. Admin sees the Audit Log section.
 3. Client loads `/api/admin/audit-log`.
 4. Admin can filter by search text, action, status, and entity type.
-5. Admin can open an entry details dialog.
+5. Admin can sort by date, user, action, entity, and status. Sorting is server-side and reloads from the API.
+6. Admin can open an entry details dialog.
 6. Details display request metadata, changed fields, before values, and after values.
 
 ## Server Flow
 
 Audit log APIs are served under `/admin/audit-log`.
+
+The list API accepts optional `sort_by` and `sort_order` query parameters. Allowed `sort_by` values are `occurred_at`, `user_email`, `action`, `entity_type`, and `status`. The default sort is `occurred_at DESC`. `sort_order` accepts `asc` or `desc`.
 
 Read APIs must use `require_admin`.
 

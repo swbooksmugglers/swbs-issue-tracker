@@ -25,7 +25,11 @@ The users table supports:
 1. Search by first name
 2. Search by last name
 3. Search by email
-4. Pagination with 5 rows per page
+4. Filter by role
+5. Filter by enabled status
+6. Filter by password setup status
+7. Column sorting by name, email, role, enabled, and status
+8. Pagination with 5 rows per page
 
 User search is inactive until the search text is at least 3 characters after trimming whitespace.
 
