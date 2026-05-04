@@ -5,13 +5,14 @@
 Lookup management covers:
 1. Authors
 2. Publishers
-3. Roles
-4. Exclusives
-5. Eras
-6. Series
-7. Sub-series
-8. Collection customizations
-9. Reading statuses
+3. Formats (book_type)
+4. Roles
+5. Exclusives
+6. Eras
+7. Series
+8. Sub-series
+9. Collection customizations
+10. Reading statuses
 
 Role and permission behavior follows `docs/context/auth/roles.md` and `docs/context/auth/permissions.md`.
 
@@ -19,7 +20,7 @@ Listing, creating, and renaming lookup records require role `admin` or `power_us
 
 Deleting lookup records requires role `admin`.
 
-Lookup names must be unique case-insensitively within the lookup type.
+Lookup names must be unique case-insensitively within the lookup type. Formats store their name in a `description` column; all other lookups use a `name` column.
 
 Lookup records referenced by books or collected items must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
 
@@ -31,7 +32,7 @@ Reading statuses referenced by collected items must not be deleted.
 
 ## Client Side Validation
 
-Client side validation occurs in lookup management modals, including authors, publishers, roles, exclusives, eras, series, sub-series, and collection customizations.
+Client side validation occurs in lookup management modals, including authors, publishers, formats, roles, exclusives, eras, series, sub-series, and collection customizations.
 
 On search validation failure
 1. If query is fewer than 3 characters after trimming whitespace, keep Search button disabled
