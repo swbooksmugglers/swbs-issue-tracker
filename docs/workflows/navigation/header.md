@@ -10,7 +10,7 @@ Header displays global search.
 
 Header displays account menu button.
 
-Account menu button displays the user's current rank based on their affiliation and collected item count.
+Account menu button displays the user's current rank based on their faction and collected item count.
 
 ## Client Side Validation
 
@@ -19,8 +19,8 @@ Client side validation occurs when Header renders.
 On render:
 1. Decode token payload
 2. Read first name and role from token
-3. Read display name, affiliation, and collected item count from theme preference context
-4. Compute rank from affiliation and collected item count
+3. Read display name, faction, and collected item count from theme preference context
+4. Compute rank from faction and collected item count
 5. Display rank and name as the account menu button label (e.g. "Padawan Herm")
 6. Use display name when set, fall back to first name from token
 

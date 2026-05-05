@@ -4,15 +4,15 @@
 
 Appearance preferences can be updated by the signed-in user.
 
-Valid affiliations are:
+Valid factions are:
 1. `jedi`
 2. `sith`
 3. `rebel_alliance`
 4. `galactic_empire`
 
-Default affiliation is `jedi`.
+Default faction is `jedi`.
 
-Each affiliation has four ranks determined by the number of collected items:
+Each faction has four ranks determined by the number of collected items:
 - Rank 1 (0–24 items): Youngling / Acolyte / Trooper / Cadet
 - Rank 2 (25–49 items): Padawan / Apprentice / Captain / Commander
 - Rank 3 (50–74 items): Knight / Warrior / Major / Admiral
@@ -46,17 +46,17 @@ Profile updates must upsert the profile row when one does not already exist.
 
 ## Client Side Validation
 
-Client side validation occurs when a colour mode, affiliation, or theme option is selected.
+Client side validation occurs when a colour mode, faction, or theme option is selected.
 
 On colour mode selection:
 1. If selected colour mode is already active, do nothing
 2. If a colour mode save is in progress, ignore additional selections
 3. Otherwise call update profile API with selected colour mode
 
-On affiliation selection:
-1. If selected affiliation is already active, do nothing
-2. If an affiliation save is in progress, ignore additional selections
-3. Otherwise call update profile API with selected affiliation
+On faction selection:
+1. If selected faction is already active, do nothing
+2. If an faction save is in progress, ignore additional selections
+3. Otherwise call update profile API with selected faction
 
 On theme selection:
 1. If selected theme is already active, do nothing
@@ -71,13 +71,13 @@ The update profile API must validate:
 1. Caller is authenticated
 2. Colour mode is one of the valid colour modes when provided
 3. Theme is one of the valid themes when provided
-4. Affiliation is one of the valid affiliations when provided
+4. Faction is one of the valid factions when provided
 
 If colour mode is invalid, return bad request.
 
 If theme is invalid, return bad request.
 
-If affiliation is invalid, return bad request.
+If faction is invalid, return bad request.
 
 ## Colour Mode Workflow
 
@@ -105,24 +105,24 @@ If affiliation is invalid, return bad request.
 9. Client updates theme context
 10. Client displays success message
 
-## Affiliation Workflow
+## Faction Workflow
 
 1. User opens Profile page
-2. Profile page fetches GET profile API and syncs affiliation and collected item count to context
-3. User selects an affiliation
-4. Client calls update profile API with affiliation
+2. Profile page fetches GET profile API and syncs faction and collected item count to context
+3. User selects an faction
+4. Client calls update profile API with faction
 5. API validates JWT
-6. API validates affiliation
+6. API validates faction
 7. API creates profile row if needed
-8. API updates affiliation
+8. API updates faction
 9. API returns updated profile
-10. Client updates affiliation context
+10. Client updates faction context
 11. Client displays success message
 
 ## Failure Workflow
 
 1. If colour mode save fails, display failed-to-save colour mode message
-2. If affiliation save fails, display failed-to-save affiliation message
+2. If faction save fails, display failed-to-save faction message
 3. If theme save fails, display failed-to-save theme preference message
 4. If network fails, display network error message
 5. Keep the user on the Profile page
