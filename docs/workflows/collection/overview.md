@@ -17,6 +17,7 @@ Users can edit only collected-item fields:
 6. Sold price
 7. Date sold
 8. Collection customizations
+9. My Printing
 
 Users cannot edit the referenced book from the Collection page.
 
