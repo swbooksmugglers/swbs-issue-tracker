@@ -25,22 +25,7 @@ Valid colour modes are:
 2. `auto`
 3. `dark`
 
-Valid themes are:
-1. `default`
-2. `mustafar`
-3. `endor`
-4. `hoth`
-5. `dagobah`
-6. `coruscant`
-7. `tatooine`
-
-Legacy saved value `imperial` is accepted for compatibility and displayed as `mustafar`.
-
-Legacy saved value `rebel` is accepted for compatibility and displayed as `endor`.
-
-Legacy saved value `jedi` is accepted for compatibility and displayed as `hoth`.
-
-Legacy saved value `crawl` is accepted for compatibility and displayed as `dagobah`.
+Theme is derived from the selected faction on the client. There is no separate theme field.
 
 Profile updates must upsert the profile row when one does not already exist.
 
@@ -58,11 +43,6 @@ On faction selection:
 2. If an faction save is in progress, ignore additional selections
 3. Otherwise call update profile API with selected faction
 
-On theme selection:
-1. If selected theme is already active, do nothing
-2. If a theme save is in progress, ignore additional selections
-3. Otherwise call update profile API with selected theme
-
 ## Server Side Validation
 
 Server side validation must occur at the API level.
@@ -70,12 +50,9 @@ Server side validation must occur at the API level.
 The update profile API must validate:
 1. Caller is authenticated
 2. Colour mode is one of the valid colour modes when provided
-3. Theme is one of the valid themes when provided
-4. Faction is one of the valid factions when provided
+3. Faction is one of the valid factions when provided
 
 If colour mode is invalid, return bad request.
-
-If theme is invalid, return bad request.
 
 If faction is invalid, return bad request.
 
@@ -90,19 +67,6 @@ If faction is invalid, return bad request.
 7. API updates colour mode
 8. API returns updated profile
 9. Client updates colour mode context
-10. Client displays success message
-
-## Theme Workflow
-
-1. User opens Profile page
-2. User selects a theme
-3. Client calls update profile API with theme
-4. API validates JWT
-5. API validates theme
-6. API creates profile row if needed
-7. API updates theme
-8. API returns updated profile
-9. Client updates theme context
 10. Client displays success message
 
 ## Faction Workflow
@@ -123,6 +87,5 @@ If faction is invalid, return bad request.
 
 1. If colour mode save fails, display failed-to-save colour mode message
 2. If faction save fails, display failed-to-save faction message
-3. If theme save fails, display failed-to-save theme preference message
-4. If network fails, display network error message
-5. Keep the user on the Profile page
+3. If network fails, display network error message
+4. Keep the user on the Profile page

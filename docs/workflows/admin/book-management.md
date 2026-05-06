@@ -95,22 +95,31 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 10. Client closes modal
 11. Client displays success message
 
+## List Books API
+
+`GET /api/admin/books` returns all books ordered by title. Each item contains `id`, `title`, and `author` (the primary author's name, resolved by role priority: author → illustrator → other; `null` if none).
+
+Requires power user access.
+
+Used by the Entity Manager to list books without requiring a search query.
+
 ## Edit Book Workflow
 
-1. User searches for a book
-2. User clicks edit icon for a search result
-3. Client loads book detail and lookup data
-4. Client displays Edit Book form
-5. User updates fields
-6. User clicks Update
-7. Client calls update book API
-8. API updates book
-9. Client closes modal
-10. Client displays success message
+1. User selects Books in the Entity Manager
+2. Client calls `GET /api/admin/books` and lists all books
+3. User clicks edit icon for a book
+4. Client loads book detail and lookup data
+5. Client displays Edit Book form
+6. User updates fields
+7. User clicks Update
+8. Client calls update book API
+9. API updates book
+10. Client closes modal
+11. Client displays success message
 
 ## Save As New Workflow
 
-1. User searches for a book
+1. User selects a book in the Entity Manager
 2. User opens Edit Book form
 3. User changes ISBN or other fields
 4. User clicks Save as New
@@ -121,7 +130,7 @@ Delete conflict handling follows the block-and-notify rule in `docs/context/deve
 
 ## Delete Book Workflow
 
-1. Admin searches for a book
+1. Admin selects a book in the Entity Manager
 2. Admin opens Edit Book form
 3. Admin clicks Delete
 4. Client opens delete confirmation view
