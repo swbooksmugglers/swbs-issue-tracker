@@ -27,7 +27,7 @@ Reading statuses are stored in `reading_status` and seeded as:
 2. `TBR`
 3. `DNF`
 
-Collection customizations are stored in `collection_customization` and seeded as:
+Collection customizations are stored in `customization` and seeded as:
 1. `Sprayed Pages`
 2. `Rebind`
 3. `Endpapers`

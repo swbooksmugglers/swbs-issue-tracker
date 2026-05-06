@@ -5,7 +5,7 @@
 Lookup management covers:
 1. Authors
 2. Publishers
-3. Formats (book_type)
+3. Formats
 4. Roles
 5. Exclusives
 6. Eras

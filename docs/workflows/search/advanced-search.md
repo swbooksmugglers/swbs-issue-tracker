@@ -35,7 +35,7 @@ Filter options are loaded from `GET /api/book/search-filters` when the dialog is
 ## Server Side
 
 Filter params are passed as optional query params on `GET /api/book/search`:
-- `publisher_id`, `book_type_id`, `series_id`, `sub_series_id`, `continuity_id`, `era_id`, `exclusive_id`, `limited_edition_type_id` (integers)
+- `publisher_id`, `format_id`, `series_id`, `sub_series_id`, `continuity_id`, `era_id`, `exclusive_id`, `limited_edition_type_id` (integers)
 - `signed` (boolean)
 
 All filter params are optional. Omitted params are not applied.
