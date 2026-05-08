@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Support workflows let signed-in users view app version information and submit bug reports.
+Support workflows let signed-in users access the User Guide, FAQ, submit bug reports, and view app version information.
 
 ## Workflows
 
@@ -12,7 +12,9 @@ Support workflows are documented in:
 
 ## Role Rules
 
-Support and About are available to signed-in users from the header account menu.
+Support (page), Submit a Bug, and About are available to signed-in users from the header account menu.
+
+The Support page (`/support`) requires authentication. It contains User Guide and FAQ sections.
 
 Bug report submission requires authenticated user access.
 

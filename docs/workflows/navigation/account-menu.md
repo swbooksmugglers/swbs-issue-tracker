@@ -28,9 +28,11 @@ On render:
 Menu actions are:
 1. Admin: navigate to `/admin` (admin and power_user only; shown at top with divider below)
 2. Settings: navigate to `/settings`
-3. Support: open Support modal
-4. About: open About modal
-5. Sign out: call signout workflow
+3. Support: navigate to `/support`
+4. Submit a Bug: open Bug Report modal
+5. About: open About modal
+6. Divider
+7. Sign out: call signout workflow
 
 ## Failure Workflow
 
