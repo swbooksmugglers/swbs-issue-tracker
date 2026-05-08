@@ -10,6 +10,7 @@ New password must meet the following criteria:
 - MIN = 8
 - MAX = 64
 - Must not contain the user's email, email local part, first name, or last name
+- Must not match any of the user's last 5 passwords
 
 New password must be different from current password.
 
@@ -42,6 +43,7 @@ The change password API must validate:
 4. New password length is between MIN and MAX
 5. Current password matches the stored password hash
 6. New password does not contain the user's email, email local part, first name, or last name
+7. New password does not match any of the user's last 5 passwords (returns "You cannot reuse one of your last 5 passwords.")
 
 If current password is incorrect, return unauthorized.
 

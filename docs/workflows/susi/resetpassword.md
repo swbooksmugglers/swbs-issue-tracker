@@ -12,6 +12,7 @@ New password must meet the following criteria:
 - MIN = 8
 - MAX = 64
 - Must not contain the user's email, email local part, first name, or last name
+- Must not match any of the user's last 5 passwords
 
 New password and confirm password must match.
 
@@ -45,6 +46,7 @@ The reset-password API must validate:
 6. Token is not expired
 7. Token has not already been used (token `iat` must be after `users.password_reset_at`)
 8. Password does not contain the user's email, email local part, first name, or last name
+9. Password does not match any of the user's last 5 passwords (returns a generic requirements error, not the specific reuse message)
 
 If invalid parameters are used, return an error and do not update the password.
 
