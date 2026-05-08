@@ -67,9 +67,9 @@ Prefilled fields can include:
 8. Publisher
 9. Format
 
-## Batch Summary Import Workflow
+## Summary Import Workflow
 
-Batch Summary Import requires role `admin` or `power_user`.
+Summary Import requires role `admin` or `power_user`.
 
 The batch import scans local books that have no summary, looks up Google Books by each book ISBN, and saves the returned summary when one is found.
 

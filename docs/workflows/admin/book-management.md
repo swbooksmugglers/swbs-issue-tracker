@@ -160,7 +160,7 @@ Delete summary requires admin access.
 
 Google Books single-summary retrieval requires power user access and does not write to the database.
 
-Google Books batch summary import requires power user access. It scans books with no summary, fetches by ISBN, saves summaries when found, and continues if an individual lookup fails.
+Google Books summary import requires power user access. It scans books with no summary, fetches by ISBN, saves summaries when found, and continues if an individual lookup fails.
 
 Summary add, edit, and delete write audit entries with `entity_type = "book summary"`.
 
