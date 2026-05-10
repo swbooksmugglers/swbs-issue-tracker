@@ -8,7 +8,7 @@ The workflow must not reveal whether an email address is registered.
 
 Password reset email should only be sent when the email belongs to an enabled user account.
 
-Password reset token must expire after 1 hour.
+Password reset token must expire after `PASSWORD_RESET_EXPIRY_MINUTES` minutes.
 
 ## Client Side Validation
 
@@ -42,7 +42,7 @@ If the email belongs to a disabled user, return the generic success response and
 6. API looks up the user by email
 7. If the user exists and is enabled, API generates a password reset token
 8. Password reset token has purpose `password_reset`
-9. Password reset token expires in 1 hour
+9. Password reset token expires after `PASSWORD_RESET_EXPIRY_MINUTES` minutes
 10. API sends a reset password email containing the reset link
 11. API returns a generic success response
 12. Client displays the submitted confirmation message

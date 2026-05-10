@@ -69,7 +69,7 @@ If target user is protected, return forbidden.
 4. API validates admin access
 5. API creates the user with role `user`, enabled `true`, and `password_setup_pending` set to `true`
 6. API stores a hashed secure random 32-character temporary password
-7. API sends a password setup email using the password reset token flow
+7. API sends a password setup email using the password setup token flow, expiring after `PASSWORD_RESET_EXPIRY_HOURS` hours
 8. Client adds the user to the table
 9. Client displays success message
 
@@ -88,7 +88,7 @@ If the email matches the protected admin account, return forbidden.
 3. API validates admin access
 4. API validates target user exists and is not protected
 5. API validates `password_setup_pending` is true
-6. API sends a fresh password setup email using a password reset token
+6. API sends a fresh password setup email using a password setup token
 7. Client displays success message
 
 If `password_setup_pending` is false, return conflict and do not send an email.
