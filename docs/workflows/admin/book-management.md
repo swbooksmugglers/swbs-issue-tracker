@@ -160,7 +160,15 @@ Delete summary requires admin access.
 
 Google Books single-summary retrieval requires power user access and does not write to the database.
 
-Google Books summary import requires power user access. It scans books with no summary, fetches by ISBN, saves summaries when found, and continues if an individual lookup fails.
+Google Books summary import requires power user access. It starts a persisted background job that scans books with no summary, deduplicates by normalized ISBN, skips ISBNs still inside their retry window, fetches by ISBN, saves summaries when found, and continues if an individual transient lookup fails.
+
+The summary import job stops immediately on provider-wide Google Books errors:
+1. `403` responses are recorded as `provider_blocked`.
+2. `429` responses are recorded as `rate_limited`; use the provider `Retry-After` value when present.
+
+The Admin UI polls the persisted job and displays processed, updated, unavailable, failed, and skipped counts. If the user navigates away and returns, the UI loads the active or latest job.
+
+Summary import jobs store the initiating user ID and email snapshot. Completed or stopped job indicators show the last run timestamp and the initiating email when available.
 
 Summary add, edit, and delete write audit entries with `entity_type = "book summary"`.
 

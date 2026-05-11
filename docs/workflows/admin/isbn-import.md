@@ -71,9 +71,19 @@ Prefilled fields can include:
 
 Summary Import requires role `admin` or `power_user`.
 
-The batch import scans local books that have no summary, looks up Google Books by each book ISBN, and saves the returned summary when one is found.
+The batch import starts a persisted background job. It scans local books that have no summary, deduplicates by normalized ISBN, skips ISBNs whose latest attempt is still inside its retry window, looks up Google Books by each remaining ISBN, and saves the returned summary when one is found.
 
-Missing Google Books summaries and individual lookup failures do not stop the batch. The API returns checked, updated, unavailable, and failed counts for the client success message.
+Missing Google Books summaries and individual transient lookup failures do not stop the batch. The job records checked, updated, unavailable, failed, and skipped counts for the client progress display.
+
+Summary attempt retry windows:
+1. `not_found` retries after 90 days.
+2. `failed` retries after 24 hours.
+3. `rate_limited` retries after the provider `Retry-After` value or 24 hours.
+4. `provider_blocked` requires configuration review before retrying.
+
+The batch stops immediately on Google Books `403` or `429` responses. Backend requests to Google Books are spaced by `SUMMARY_IMPORT_REQUEST_DELAY_SECONDS`.
+
+Summary import jobs store the initiating user ID and email snapshot. The Admin progress indicator persists the latest job and shows the last run timestamp plus initiating email after the job completes or stops.
 
 ## Failure Workflow
 
