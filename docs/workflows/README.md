@@ -12,6 +12,7 @@ Read workflow docs with `docs/context/index.md`. Shared auth, permissions, secur
 | Access | [admin/access.md](admin/access.md) |
 | User Management | [admin/user-management.md](admin/user-management.md) |
 | ISBN Import | [admin/isbn-import.md](admin/isbn-import.md) |
+| Summary Sync | [admin/summary-sync.md](admin/summary-sync.md) |
 | Book Management | [admin/book-management.md](admin/book-management.md) |
 | Lookup Management | [admin/lookup-management.md](admin/lookup-management.md) |
 

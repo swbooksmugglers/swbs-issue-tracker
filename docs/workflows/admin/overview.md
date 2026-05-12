@@ -27,8 +27,9 @@ Admin page workflows are documented in:
 2. `user-management.md`
 3. `audit-log.md`
 4. `isbn-import.md`
-5. `book-management.md`
-6. `lookup-management.md`
+5. `summary-sync.md`
+6. `book-management.md`
+7. `lookup-management.md`
 
 ## Role Rules
 
