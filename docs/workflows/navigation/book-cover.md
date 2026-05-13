@@ -4,11 +4,11 @@
 
 Book cover uses OpenLibrary cover image by ISBN first.
 
-If OpenLibrary does not have cover art, query Google Books by ISBN and use the best available `volumeInfo.imageLinks` URL.
+Google Books cover fallback is disabled by default. When `GOOGLE_BOOKS_COVER_FALLBACK_ENABLED=true`, if OpenLibrary does not have cover art, query Google Books by ISBN and use the best available `volumeInfo.imageLinks` URL.
 
 If Google Books has no ISBN match with cover art, query OpenLibrary search by title and author when available, then use the first result with `cover_i`.
 
-If OpenLibrary search has no cover art, query Google Books by title and author when available.
+When Google Books cover fallback is enabled and OpenLibrary search has no cover art, query Google Books by title and author when available.
 
 If none of the cover sources have cover art, display a placeholder.
 

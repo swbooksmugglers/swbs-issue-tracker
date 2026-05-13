@@ -74,7 +74,7 @@ Collection APIs use the authenticated `user_id` from the bearer token.
 
 User-scoped APIs must not accept a user id from the client.
 
-Adding a collected item defaults reading status to `TBR` when no status is supplied.
+Adding a collected item does not set reading status unless the request explicitly includes a `reading_status_id`.
 
 Duplicate copies of the same book are allowed. User-facing add flows should confirm before adding another copy when the same `book_id` already exists in the authenticated user's collection.
 
