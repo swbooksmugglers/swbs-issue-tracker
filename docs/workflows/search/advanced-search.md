@@ -16,10 +16,12 @@ Users can filter by:
 5. Era
 6. Exclusive
 7. Limited edition type
-8. Signed (Any / Yes / No)
+8. Signed checkbox (checked means signed only; unchecked means no signed filter)
 9. Continuity
 
 Filter options are loaded from `GET /api/book/search-filters` when the dialog is first opened.
+
+Filter modal control patterns are documented in `docs/context/development/ux-patterns.md`.
 
 ## Current Workflow
 

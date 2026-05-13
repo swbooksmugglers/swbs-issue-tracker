@@ -28,6 +28,8 @@ On render:
 
 1. User clicks app name
 2. Client navigates to Home page
+3. User opens Archive menu from the tab row to access Catalog, Exclusives, Legends Reference, and Timeline
+4. User opens My Library menu from the tab row to access My Collection and My Reading List
 
 ## Search Workflow
 

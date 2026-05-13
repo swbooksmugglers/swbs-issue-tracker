@@ -10,23 +10,25 @@ Users may add multiple collected items that reference the same book. Notes can d
 
 Users can edit only collected-item fields:
 1. Notes
-2. Personally signed
-3. Reading status
-4. Purchase price
-5. Date purchased
-6. Sold price
-7. Date sold
-8. Collection customizations
-9. My Printing
+2. Signed status
+3. Purchase price
+4. Date purchased
+5. Sold price
+6. Date sold
+7. Collection customizations
+8. My Printing
+
+Reading status is user-book state managed through My Reading List. Collection rows can show and update reading status, but the status is not owned by the collected copy.
 
 Users cannot edit the referenced book from the Collection page.
 
 ## Lookup Data
 
 Reading statuses are stored in `reading_status` and seeded as:
-1. `Read`
-2. `TBR`
-3. `DNF`
+1. `TBR`
+2. `Reading`
+3. `Read`
+4. `DNF`
 
 Collection customizations are stored in `customization` and seeded as:
 1. `Sprayed Pages`
@@ -36,15 +38,22 @@ Collection customizations are stored in `customization` and seeded as:
 
 Power users can add and rename collection customizations from Admin lookup management.
 
+Collected-item signed statuses are stored in `collected_item_signed_status` and seeded as:
+1. `Unsigned`
+2. `Signature Only`
+3. `Personalized Signature`
+4. `Signature with Inscription`
+5. `Personalized with Inscription`
+
 ## User Workflow
 
 1. User opens Collection from the account menu
 2. Client loads the authenticated user's default collection
-3. User filters by catalog fields, reading status, signed, customization, purchase date, or text search (filter button shown when results exist or when filters are active)
-4. User sorts the table by title, author, reading status, or signed using column headers
-5. User opens read-only book details from a row action
-6. User edits collected-item fields from a row action
-7. User removes a collected item after simple confirmation
+3. User filters by catalog fields, reading status, signed status, customization, purchase date, or text search (filter button shown when results exist or when filters are active)
+4. User sorts the table by title, author, reading status, or signed status using column headers
+5. User uses the row actions menu to open read-only book details
+6. User uses the row actions menu to edit collected-item fields
+7. User uses the row actions menu to remove a collected item after simple confirmation
 
 Collection add, edit, and remove actions are recorded in the audit log and appear in the user's My Activity list on Home.
 

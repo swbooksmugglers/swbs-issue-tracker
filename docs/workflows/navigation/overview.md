@@ -22,7 +22,9 @@ Settings, Support, About, and Sign out are visible to all signed-in users.
 
 ## Navigation Tabs
 
-Header renders a tab row below the top bar with: Home, Archive, My Collection.
+Header renders a tab row below the top bar with: Home, Archive, My Library.
+
+My Library opens a menu with: My Collection, My Reading List.
 
 Active tab is highlighted based on the current route.
 

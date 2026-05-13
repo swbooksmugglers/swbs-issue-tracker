@@ -65,7 +65,7 @@ On add:
 2. API creates a new collected item scoped to the authenticated user
 3. Duplicate copies of the same book are allowed
 4. Client displays a success snackbar
-5. Snackbar includes an edit action for reading status, notes, signed, purchase price, date purchased, and customizations
+5. Snackbar includes an edit action for reading status, notes, signed status, purchase price, date purchased, and customizations
 
 Adding a book to a collection must not edit the book entity.
 
