@@ -61,11 +61,13 @@ Displayed result fields:
 Add to collection is a per-row action.
 
 On add:
-1. Client calls `POST /api/collection/items` with the selected `book_id`
-2. API creates a new collected item scoped to the authenticated user
-3. Duplicate copies of the same book are allowed
-4. Client displays a success snackbar
-5. Snackbar includes an edit action for reading status, notes, signed status, purchase price, date purchased, and customizations
+1. Client calls `GET /api/collection/items/book/{book_id}/count` for the selected `book_id`
+2. If the authenticated user already has one or more copies, the client asks the user to confirm adding another copy
+3. Client calls `POST /api/collection/items` with the selected `book_id`
+4. API creates a new collected item scoped to the authenticated user
+5. Duplicate copies of the same book are allowed
+6. Client displays a success snackbar
+7. Snackbar includes an edit action for reading status, notes, signed status, purchase price, date purchased, and customizations
 
 Adding a book to a collection must not edit the book entity.
 

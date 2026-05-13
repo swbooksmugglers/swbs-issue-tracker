@@ -61,10 +61,12 @@ Collection add, edit, and remove actions are recorded in the audit log and appea
 
 1. User searches for books from the header
 2. User clicks the add-to-collection action on a Search Results row
-3. Client calls `POST /api/collection/items` with that row's book id
-4. API creates a collected item in the user's default collection
-5. Client shows a snackbar with an edit action
-6. User can immediately edit collected-item metadata without leaving Search Results
+3. Client checks `GET /api/collection/items/book/{book_id}/count` for existing copies in the authenticated user's collection
+4. If existing copies are found, the client asks the user to confirm adding another copy
+5. Client calls `POST /api/collection/items` with that row's book id
+6. API creates a collected item in the user's default collection
+7. Client shows a snackbar with an edit action
+8. User can immediately edit collected-item metadata without leaving Search Results
 
 ## API Workflow
 
@@ -73,6 +75,8 @@ Collection APIs use the authenticated `user_id` from the bearer token.
 User-scoped APIs must not accept a user id from the client.
 
 Adding a collected item defaults reading status to `TBR` when no status is supplied.
+
+Duplicate copies of the same book are allowed. User-facing add flows should confirm before adding another copy when the same `book_id` already exists in the authenticated user's collection.
 
 Removing a collected item deletes only the user-owned `collected_item` row and its customization links. The referenced book remains unchanged.
 
