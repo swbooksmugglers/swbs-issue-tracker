@@ -37,6 +37,8 @@ If ISFDB returns no matching publication, return not found.
 
 If author or publisher from ISFDB does not exist locally, create it.
 
+Author and publisher names are normalized before lookup and storage: accented characters are converted to their ASCII equivalents (e.g. "Córdova" → "Cordova").
+
 ## Success Workflow
 
 1. Admin or power user opens Admin page

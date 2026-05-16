@@ -22,6 +22,8 @@ Deleting lookup records requires role `admin`.
 
 Lookup names must be unique case-insensitively within the lookup type. Formats store their name in a `description` column; all other lookups use a `name` column.
 
+Author and publisher names are normalized on create and rename: accented characters are converted to their ASCII equivalents (e.g. "Córdova" → "Cordova").
+
 Lookup records referenced by books or collected items must not be deleted. Delete conflict handling follows `docs/context/development/database-patterns.md`.
 
 Sub-series records are stored as child series records and are scoped to a parent series. A sub-series cannot be created without a parent series, and its name must be unique within that parent.
