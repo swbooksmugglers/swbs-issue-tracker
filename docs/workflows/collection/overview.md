@@ -17,6 +17,7 @@ Users can edit only collected-item fields:
 6. Date sold
 7. Collection customizations
 8. My Printing
+9. Legends Banner (Mass Market Paperbacks only; forced true and non-editable for books in `legends_banner_only`)
 
 Reading status is user-book state managed through My Reading List. Collection rows can show and update reading status, but the status is not owned by the collected copy.
 
@@ -49,7 +50,7 @@ Collected-item signed statuses are stored in `collected_item_signed_status` and 
 
 1. User opens Collection from the account menu
 2. Client loads the authenticated user's default collection
-3. User filters by catalog fields, reading status, signed status, customization, purchase date, or text search (filter button shown when results exist or when filters are active)
+3. User filters by catalog fields, reading status, signed status, customization, purchase date, Legends Banner, or text search (filter button shown when results exist or when filters are active)
 4. User sorts the table by title, author, reading status, or signed status using column headers
 5. User uses the row actions menu to open read-only book details
 6. User uses the row actions menu to edit collected-item fields
