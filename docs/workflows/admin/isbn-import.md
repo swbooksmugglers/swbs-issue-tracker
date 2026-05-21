@@ -61,13 +61,17 @@ Author and publisher names are normalized before lookup and storage: accented ch
 Prefilled fields can include:
 1. Title
 2. ISBN
-3. Publication date
-4. MSRP
-5. Notes
-6. Summary
-7. Author
-8. Publisher
-9. Format
+3. Cover key (normalized ISBN — hyphens stripped)
+4. Publication date
+5. MSRP
+6. Notes
+7. Summary
+8. Author
+9. Publisher
+10. Format
+11. Continuity (inferred from publication date when not explicitly set)
+12. Series
+13. Sub-series
 
 ## Summary Import Workflow
 
