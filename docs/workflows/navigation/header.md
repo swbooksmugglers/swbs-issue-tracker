@@ -8,9 +8,11 @@ Header displays app name.
 
 Header displays global search.
 
-Header displays account menu button.
+Header displays a credits earned badge showing the user's accumulated activity points.
 
-Account menu button displays the user's current rank based on their faction and collected item count.
+Header displays a notification bell icon button.
+
+Header displays the account menu button showing the user's rank and name.
 
 ## Client Side Validation
 
@@ -24,12 +26,31 @@ On render:
 5. Display rank and name as the account menu button label (e.g. "Padawan Herm")
 6. Use display name when set, fall back to first name from token
 
-## Navigation Workflow
+## Navigation Tabs
 
-1. User clicks app name
-2. Client navigates to Home page
-3. User opens Archive menu from the tab row to access Catalog, Exclusives, Legends Reference, and Timeline
-4. User opens My Library menu from the tab row to access My Collection and My Reading List
+Header renders four navigation tabs below the top bar:
+
+1. **Home** (`/home`) — navigates directly
+2. **Archive** — opens Archive sub-menu:
+   - Catalog (`/archive/catalog`)
+   - Exclusives (`/archive/exclusives`)
+   - Legends Reference (`/archive/legends`)
+   - SFBC Reference (`/archive/sfbc`)
+   - Timeline (`/archive/timeline`)
+3. **My Library** — opens My Library sub-menu:
+   - My Collection (`/collection`)
+   - My Events (`/events`)
+   - My Reading List (`/reading-list`)
+4. **Codex** — opens Codex sub-menu:
+   - FAQ (`/support`)
+   - Gutter Codes (`/gutter-codes`)
+   - SFBC Guide (`/sfbc-guide`)
+
+The active tab is determined by the current route. The Codex tab is active when the current path is `/support`, `/gutter-codes`, or `/sfbc-guide`.
+
+## Account Menu Workflow
+
+Account menu button shows the user's rank and name. Clicking it opens the account menu. See `account-menu.md` for the full workflow.
 
 ## Search Workflow
 

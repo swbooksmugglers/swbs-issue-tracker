@@ -21,10 +21,19 @@ If no stored token exists, protected page redirects to Sign In page.
 Protected routes include:
 1. `/home`
 2. `/settings`
-3. `/archive`
-4. `/collection`
-5. `/admin`
-6. `/search`
+3. `/archive/catalog`
+4. `/archive/exclusives`
+5. `/archive/legends`
+6. `/archive/sfbc`
+7. `/archive/timeline`
+8. `/collection`
+9. `/events`
+10. `/reading-list`
+11. `/admin`
+12. `/search`
+13. `/support`
+14. `/gutter-codes`
+15. `/sfbc-guide`
 
 Admin-only data views inside `/admin` include:
 1. Audit Log

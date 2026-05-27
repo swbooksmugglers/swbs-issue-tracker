@@ -6,7 +6,7 @@ Account menu requires signed-in user context.
 
 Admin menu item is visible only when role is `admin` or `power_user`.
 
-Settings, Support, About, and Sign out are visible to signed-in users.
+Settings, Submit a Bug, About, and Sign out are visible to all signed-in users.
 
 ## Client Side Validation
 
@@ -28,11 +28,10 @@ On render:
 Menu actions are:
 1. Admin: navigate to `/admin` (admin and power_user only; shown at top with divider below)
 2. Settings: navigate to `/settings`
-3. Support: navigate to `/support`
-4. Submit a Bug: open Bug Report modal
-5. About: open About modal
-6. Divider
-7. Sign out: call signout workflow
+3. Submit a Bug: open Bug Report modal
+4. About: open About modal
+5. Divider
+6. Sign out: call signout workflow
 
 ## Failure Workflow
 

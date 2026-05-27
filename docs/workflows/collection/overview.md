@@ -18,6 +18,7 @@ Users can edit only collected-item fields:
 7. Collection customizations
 8. My Printing
 9. Legends Banner (Mass Market Paperbacks only; forced true and non-editable for books in `legends_banner_only`)
+10. Contributor signatures (which book contributors have signed this specific copy)
 
 Reading status is user-book state managed through My Reading List. Collection rows can show and update reading status, but the status is not owned by the collected copy.
 

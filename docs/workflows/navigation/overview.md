@@ -18,15 +18,19 @@ Header is shown on authenticated app pages.
 
 Admin menu item is visible only for `admin` and `power_user` roles.
 
-Settings, Support, About, and Sign out are visible to all signed-in users.
+Settings, Submit a Bug, About, and Sign out are visible to all signed-in users.
 
 ## Navigation Tabs
 
-Header renders a tab row below the top bar with: Home, Archive, My Library.
+Header renders a tab row below the top bar with four tabs: Home, Archive, My Library, and Codex.
 
-My Library opens a menu with: My Collection, My Reading List.
+**Archive** opens a sub-menu with: Catalog, Exclusives, Legends Reference, SFBC Reference, Timeline.
 
-Active tab is highlighted based on the current route.
+**My Library** opens a sub-menu with: My Collection, My Events, My Reading List.
+
+**Codex** opens a sub-menu with: FAQ, Gutter Codes, SFBC Guide.
+
+Active tab is highlighted based on the current route. Routes `/support`, `/gutter-codes`, and `/sfbc-guide` all activate the Codex tab.
 
 ## Client Entry Points
 
