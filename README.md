@@ -37,8 +37,14 @@ The support requests submitted through the app's `Support` menu options will be 
 
 [Issue Tracker](https://github.com/swbooksmugglers/swbs-issue-tracker/issues)
 
+## Discussions
+
+For discussing designing proposed features.
+
+[Discussions](https://github.com/swbooksmugglers/swbs-issue-tracker/discussions)
+
 ## Wiki
 
-The wiki is the place to capture & discuss ideas before making decisions to add them as feature requests.
+For collecting random thoughts, temporary notes and feedback.
 
 [Wiki](https://github.com/swbooksmugglers/swbs-issue-tracker/wiki)
