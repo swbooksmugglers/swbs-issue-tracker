@@ -31,7 +31,7 @@ Docs cover the access (permissions) and workflow explainations for all features.
 
 ## Issue Tracker
 
-The issue tracker is used to track reported bugs and feature requests.
+The issue tracker is used to track reported bugs.
 
 The support requests submitted through the app's `Support` menu options will be logged as a `bug` in the issue tracker.
 
