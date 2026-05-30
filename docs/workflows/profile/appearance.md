@@ -5,18 +5,23 @@
 Appearance preferences can be updated by the signed-in user.
 
 Valid factions are:
-1. `jedi`
-2. `sith`
-3. `rebel_alliance`
-4. `galactic_empire`
+1. `galactic_empire`
+2. `jedi`
+3. `mandalorian`
+4. `rebel_alliance`
+5. `sith`
 
 Default faction is `jedi`.
 
 Each faction has four ranks determined by the number of collected items:
-- Rank 1 (0–24 items): Youngling / Acolyte / Trooper / Cadet
-- Rank 2 (25–49 items): Padawan / Apprentice / Captain / Commander
-- Rank 3 (50–74 items): Knight / Warrior / Major / Admiral
-- Rank 4 (75+ items): Master / Darth / General / Grand Moff
+
+| Rank | 0–24 items | 25–49 items | 50–74 items | 75+ items |
+|------|-----------|------------|------------|----------|
+| `galactic_empire` | Cadet | Commander | Admiral | Grand Moff |
+| `jedi` | Youngling | Padawan | Knight | Master |
+| `mandalorian` | Foundling | Apprentice | Warrior | Clan Leader |
+| `rebel_alliance` | Trooper | Captain | Major | General |
+| `sith` | Acolyte | Apprentice | Warrior | Darth |
 
 The user's current rank is displayed as the account menu button label in the header.
 
