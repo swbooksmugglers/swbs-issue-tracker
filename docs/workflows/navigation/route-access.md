@@ -29,11 +29,12 @@ Protected routes include:
 8. `/collection`
 9. `/events`
 10. `/reading-list`
-11. `/admin`
-12. `/search`
-13. `/support`
-14. `/gutter-codes`
-15. `/sfbc-guide`
+11. `/wishlist`
+12. `/admin`
+13. `/search`
+14. `/support`
+15. `/gutter-codes`
+16. `/sfbc-guide`
 
 Admin-only data views inside `/admin` include:
 1. Audit Log

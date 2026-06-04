@@ -44,7 +44,8 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 8. User can click **Filter** to open the filter dialog and narrow results server-side (Filter shown when results exist or when filters are active)
 9. User can sort results by title, ISBN, author, publisher, or publication date using column headers
 10. User can add a row's book to their collection from the row action icon
-11. After a valid search, client always displays the ISBN Import prompt below results
+11. User can add a row's book to their wishlist, or navigate to the wishlist pre-filtered on that book if it is already on the wishlist
+12. After a valid search, client always displays the ISBN Import prompt below results
 
 Displayed result fields:
 1. Cover
@@ -54,7 +55,8 @@ Displayed result fields:
 5. Publisher
 6. Publication date
 7. Row action to add to collection
-8. Row action to view details
+8. Row action to add to wishlist / view in wishlist
+9. Row action to view details
 
 ## Add To Collection Workflow
 
@@ -70,6 +72,20 @@ On add:
 7. Snackbar includes an edit action for reading status, notes, signed status, purchase price, date purchased, and customizations
 
 Adding a book to a collection must not edit the book entity.
+
+## Add To Wishlist Workflow
+
+Add to wishlist is a per-row action. The row action label and icon reflect current wishlist state, fetched on page load via `GET /api/wishlist/book-ids`.
+
+- If the book is **not** on the wishlist: row shows **Add to Wishlist** (BookmarkAdd icon).
+  1. Client calls `POST /api/wishlist/books/{book_id}`
+  2. On 201: toast confirms addition; row action swaps to **View in Wishlist**
+  3. On 409 (already in collection): toast explains book is already in collection
+  4. On 200 with `already_exists`: no-op toast
+- If the book **is** on the wishlist: row shows **View in Wishlist** (BookmarkAdded icon).
+  1. Client navigates to `/wishlist` with route state `{ preFilter: book.title }` to pre-filter the wishlist page on that book
+
+Adding a book to the collection automatically removes it from the wishlist server-side. The wishlist row action reverts to **Add to Wishlist** on next page load.
 
 ## Filter Workflow
 

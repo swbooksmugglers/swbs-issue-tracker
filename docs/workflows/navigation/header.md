@@ -41,6 +41,7 @@ Header renders four navigation tabs below the top bar:
    - My Collection (`/collection`)
    - My Events (`/events`)
    - My Reading List (`/reading-list`)
+   - My Wishlist (`/wishlist`)
 4. **Codex** — opens Codex sub-menu:
    - FAQ (`/support`)
    - Gutter Codes (`/gutter-codes`)

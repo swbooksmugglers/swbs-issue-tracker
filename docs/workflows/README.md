@@ -43,6 +43,12 @@ Read workflow docs with `docs/context/index.md`. Shared auth, permissions, secur
 |---|---|
 | Overview | [reading-list/overview.md](reading-list/overview.md) |
 
+## Wishlist
+
+| Workflow | Document |
+|---|---|
+| Overview | [wishlist/overview.md](wishlist/overview.md) |
+
 ## Navigation
 
 | Workflow | Document |
