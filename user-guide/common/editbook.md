@@ -16,4 +16,4 @@ In the Edit My Book form, there will be several details that you can update.
 
 <img width="642" height="774" alt="edit-my-book-form-2" src="https://github.com/user-attachments/assets/4cee889d-efa1-4ba3-8bc9-5a78873eb9a4" />
 
-If you're editing a special edition of a book (Goldsboro Brotherhood in this example). You'll notice that you add your limitation number and the signed toggle by Mike Chen's name is disabled, it's because the book came pre-signed from Goldsboro so you can't override this detail. You are able to change the signed status if you get personalization or inscription added to your copy of the book.
+If you're editing a special edition of a book (Goldsboro Brotherhood in this example). You'll notice that you add your number (My Number) and the signed toggle by Mike Chen's name is disabled, it's because the book came pre-signed from Goldsboro so you can't override this detail. You are able to change the signed status if you get personalization or inscription added to your copy of the book.
