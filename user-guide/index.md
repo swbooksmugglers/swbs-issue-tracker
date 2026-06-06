@@ -4,6 +4,10 @@
 1. [Filter](common/filter.md)
 1. [Search](common/search.md)
 
+## Profile Menu
+1. Settings
+1. Submit a Bug
+
 ## Pages
 
 ### Home
