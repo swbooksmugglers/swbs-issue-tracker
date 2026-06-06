@@ -12,7 +12,7 @@ In the Edit My Book form, there will be several details that you can update.
 
 * update the book's signed status by toggling the Signed switch by the author's name
 * you can even changed the signed status to different signed states, for example: `Signature Only`, `Personalized Signature`, etc...
-* track the printing, legends banner status, customizations and personal notes
+* track the printing, legends banner status, customizations, personal notes and other details
 
 <img width="642" height="774" alt="edit-my-book-form-2" src="https://github.com/user-attachments/assets/4cee889d-efa1-4ba3-8bc9-5a78873eb9a4" />
 
