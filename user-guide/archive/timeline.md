@@ -8,6 +8,6 @@ Each era displays the timeline range and the number of titles in the era.
 
 This page has the following features:
 * [Bulk Add](../common/bulkadd.md)
-* [Page level search](../common/search.md)
+* [Page level search](../common/search.md#page-level-dataset-search)
 * [Filtering](../common/filter.md)
 * [Action Menu](../common/actionmenu.md) 
