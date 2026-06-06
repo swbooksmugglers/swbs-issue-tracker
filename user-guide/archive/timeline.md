@@ -7,7 +7,7 @@ The Timeline page lists each continuity (Canon and Legends) in timeline order gr
 Each era displays the timeline range and the number of titles in the era.
 
 This page has the following features:
-* [Bulk Add](../common/bulkadd.md)
-* [Page level search](../common/search.md#page-level-dataset-search)
-* [Filtering](../common/filter.md)
 * [Action Menu](../common/actionmenu.md) 
+* [Bulk Add](../common/bulkadd.md)
+* [Filtering](../common/filter.md)
+* [Page level search](../common/search.md#page-level-dataset-search)
