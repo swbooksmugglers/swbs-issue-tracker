@@ -27,3 +27,10 @@ Once you've created the event, it'll be listed in your My Event page.
 <img width="1076" height="193" alt="holonet-event" src="https://github.com/user-attachments/assets/b95cd79b-7d61-4142-929d-c2b83546b0e9" />
 
 If you added an event from the Holonet, it'll display a `Holonet` chip.
+
+## Adding Books to an Event
+
+<img width="750" height="449" alt="expanded-event" src="https://github.com/user-attachments/assets/1fe27db8-3343-4294-8ee7-6c66c0a0b132" />
+
+      
+ 
