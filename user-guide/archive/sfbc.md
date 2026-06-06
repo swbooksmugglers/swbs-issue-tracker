@@ -7,7 +7,7 @@ The SFBC Reference page is a catalog of all Science Fiction Book Club (SFBC) pub
 You can filter by SFBC exclusive books and perform various actions using the [Action Menu](../common/actionmenu.md)
 
 This page has the following features:
-* [Bulk Add](../common/bulkadd.md)
-* [Page level search](../common/search.md#page-level-dataset-search)
-* [Filtering](../common/filter.md)
 * [Action Menu](../common/actionmenu.md) 
+* [Bulk Add](../common/bulkadd.md)
+* [Filtering](../common/filter.md)
+* [Page level search](../common/search.md#page-level-dataset-search)
