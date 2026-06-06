@@ -1,4 +1,4 @@
-Contents
+# Star Wars Book Smugglers User Guide
 
 ### Home
 1. [Home](home/home.md)
