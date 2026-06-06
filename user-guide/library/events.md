@@ -58,7 +58,7 @@ If add authors for books that you've added to the event, their books will automa
 
 <img width="726" height="535" alt="session" src="https://github.com/user-attachments/assets/665e3a40-417d-44b4-91eb-b4716e6c4c62" />
 
-
+Click on the chevron (`v`) icon for the session to view the session's details, you'll see session's attending authors and your books for the session.
 
 
 
