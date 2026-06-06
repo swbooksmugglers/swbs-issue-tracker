@@ -14,4 +14,4 @@ The reason that the grouping is split is because they have different contributor
 
 The groupings can be expanded to show the different variants for each title. You'll notice the Audio versions are group separately from the book versions. The main reason is that audio formats have different contributors from book formats.
 
-Audio formats often have narrators, producers and directors.
+Audio formats often have narrators, producers and directors, while the book formats do not have these contributors.
