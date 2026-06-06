@@ -6,7 +6,7 @@ Almost every list on the site from your Collection, Wishlist, Reading List, Even
 
 The options on the Action Menu will vary depending on the page.
 
-Action Menu options by page.
+## Action Menu Options by Page
 
 | Page | Action Option | Notes |
 |------|------------|-------|
