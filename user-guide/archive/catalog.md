@@ -10,4 +10,4 @@ What you can do:
 * Paginate through results — books are shown in pages you can navigate.
 * Request a Title if you notice a missing title in the database.
 * Perform actions on titles using the [Action Menu](../common/actionmenu.md).
-* Use the [Bulk Add](..common/bulkadd.md) feature to add multiple titles to your collection.
+* Use the [Bulk Add](../common/bulkadd.md) feature to add multiple titles to your collection.
