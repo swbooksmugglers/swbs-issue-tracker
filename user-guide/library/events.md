@@ -64,6 +64,21 @@ Click on the chevron (`v`) icon for the session to view the session's details, y
 
 You'll also notice that the session has an `Attended` switch, when turn the switch on, it tracks that you attended the session. This allows you to keep track of sessions that you were able to attend or missed due to scheduling reasons.
 
+## Sharing a Private Event to the Holonet
+
+<img width="1104" height="156" alt=" share-button" src="https://github.com/user-attachments/assets/04107b04-d98f-4c28-9df5-2246f3747836" />
+
+If you've created a private event but want to share the event with the community, you can use the share button to post the event to the Holonet.
+
+<img width="474" height="534" alt="share-confirmation" src="https://github.com/user-attachments/assets/bee8ec7b-1207-4277-811f-af1081076b4f" />
+
+When you share an event to the Holonet, it will only share the event details. The books & sessions you've added to the event will remain private.
+
+
+<img width="1091" height="138" alt="shared-holonet" src="https://github.com/user-attachments/assets/52142106-9f88-4050-8478-43650dbe1dde" />
+
+Your shared event will appear on the Holonet page, exactly as if you had submitted the event directly on the Holonet page.
+
 ## Editing & Removing Sessions & Events
 
 Sessions and Events can be edited, any of the information that you added while creating the session or event can be updated or removed.
