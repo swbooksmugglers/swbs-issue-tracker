@@ -11,3 +11,12 @@ The [Edit My Book](../common/editbook.md) option from the [Action Menu](../commo
 ## Remove from My Collection
 
 To remove a book from your collection simply select the "Remove from My Collection" option from the [Action Menu](../common/actionmenu.md).
+
+## Other Features
+
+This page has the following features:
+* [Action Menu](../common/actionmenu.md) 
+* [Filtering](../common/filter.md)
+* [Page level search](../common/search.md#page-level-dataset-search)
+* Save as Default Sort: If you change the sort and prefer the updated sort, you can save it as your default sort.
+* Sort the table by title, author, timeline, era, continuity, format, or ISBN using the column headers.
