@@ -5,8 +5,8 @@
 1. [Search](common/search.md)
 
 ## Profile Menu
-1. Settings
-1. Submit a Bug
+1. [Settings](menu/settings.md)
+1. [Submit a Bug](menu/submitbug.md)
 
 ## Pages
 
