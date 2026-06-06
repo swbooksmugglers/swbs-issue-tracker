@@ -2,6 +2,7 @@
 
 ## Features
 1. [Action Menu](common/actionmenu.md)
+1. [Bulk Add](common/bulkadd.md)
 1. [Editing a Book](common/editbook.md)
 1. [Event Planning & Management](common/events.md)
 1. [Filter](common/filter.md)
