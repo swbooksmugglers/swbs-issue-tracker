@@ -1,8 +1,8 @@
 Contents
 
 ### Home
-1. Home
-1. [Holonet](page/holonet.md)
+1. [Home](home/home.md)
+1. [Holonet](home/holonet.md)
 ### Archive
 1. Catalog
 1. Exclusives
