@@ -1,7 +1,8 @@
 # Star Wars Book Smugglers User Guide
 
 ## Features
-1. [Action Menu](common/actionmenu.md)  
+1. [Action Menu](common/actionmenu.md)
+1. [Editing a Book](common/editbook.md)
 1. [Filter](common/filter.md)
 1. [Group by Title & Author (contributors)](common/grouping.md)
 1. [Search](common/search.md)
