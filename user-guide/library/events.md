@@ -32,5 +32,13 @@ If you added an event from the Holonet, it'll display a `Holonet` chip.
 
 <img width="750" height="449" alt="expanded-event" src="https://github.com/user-attachments/assets/1fe27db8-3343-4294-8ee7-6c66c0a0b132" />
 
-      
- 
+Click the chevron (`v`) icon to expand your event, this will allow you to add books and add sessions to the event.
+
+<img width="598" height="541" alt="add-book" src="https://github.com/user-attachments/assets/04cbe660-2da8-4074-92d1-7b399540de23" />
+
+The books available in the list are all of the titles in your collection filtered by the attending authors. Select the books you plan to bring to the event and click on the `Add` button.
+
+<img width="740" height="451" alt="books-brought" src="https://github.com/user-attachments/assets/8e5b3a58-5caa-4c90-909f-3416b6390242" />
+
+Click on the chevron (`v`) icon on the `Books Brought` section will display a scrollable list of your selected
+ books.
