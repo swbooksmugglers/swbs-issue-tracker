@@ -29,3 +29,8 @@ Let's you set Light mode or Dark mode for the site's display. `Auto` will use yo
 Exports your collection to a CSV file.
 
 ## Security
+
+<img width="449" height="316" alt="update-password" src="https://github.com/user-attachments/assets/8b2a6766-e978-41ca-9a76-8cd39b2b3fa1" />
+
+The security section allows you to change your password.
+
