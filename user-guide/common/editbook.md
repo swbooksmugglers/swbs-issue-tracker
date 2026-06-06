@@ -4,7 +4,7 @@ Books can only be edited once you've added them to your collection. Think of boo
 
 <img width="315" height="265" alt="action-menu" src="https://github.com/user-attachments/assets/187f4008-ae43-4722-a1f4-03cd8bfd83bb" />
 
-To edit your books, navigate to the My Collection page and use the Action Menu on the book you would like to update.
+To edit your books, navigate to the My Collection page and use the [Action Menu](actionmenu.md) on the book you would like to update.
 
 <img width="651" height="710" alt="edit-my-book-form" src="https://github.com/user-attachments/assets/57889afd-280b-4d80-863f-30acf88d544c" />
 
