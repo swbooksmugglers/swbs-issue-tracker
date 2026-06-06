@@ -60,6 +60,11 @@ If add authors for books that you've added to the event, their books will automa
 
 Click on the chevron (`v`) icon for the session to view the session's details, you'll see session's attending authors and your books for the session.
 
+You'll also notice that the session has an `Attended` switch, when turn the switch on, it tracks that you attended the session. This allows you to keep track of sessions that you were able to attend or missed due to scheduling reasons.
 
+## Editing & Removing Sessions & Events
 
+Sessions and Events can be edited, any of the information that you added while creating the session or event can be updated or removed.
+
+One thing to keep in mind, is all sessions in an event must be removed before you can remove an event.
 
