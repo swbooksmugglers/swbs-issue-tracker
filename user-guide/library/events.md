@@ -52,5 +52,14 @@ Next you can add session(s) to your event, so you'll know the time & location fo
 
 You'll need to assign an attending author to a session, at most events not all authors will be at the same session. The authors in the list are filtered by the attending authors. You will also be able to assign authors to multiple sessions within an event.
 
+<img width="599" height="724" alt="session-author-books" src="https://github.com/user-attachments/assets/d3f2c42e-5311-47d0-8c65-1d52e01e8a50" />
+
+If add authors for books that you've added to the event, their books will automatically display in a scrollable list in the Add Session form. You can then select the books you plan on bringing to the session.
+
+<img width="726" height="535" alt="session" src="https://github.com/user-attachments/assets/665e3a40-417d-44b4-91eb-b4716e6c4c62" />
+
+
+
+
 
 
