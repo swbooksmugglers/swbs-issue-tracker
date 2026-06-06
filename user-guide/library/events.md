@@ -1,14 +1,16 @@
 # My Events
 
-My Events page is used to manage the event that you plan on attending, these can events that the community has broadcasted over at the Holonet or events that you've personally logged.
+My Events page is used to manage the event that you plan on attending, these can events that the community has broadcasted over at the Holonet or events that you've personally logged (private event).
 
 ## Adding an Event
 
-### Personally Logged Event
+### Private Event
+
+A private event, is an event that you create on the My Events page and does not appear on the Holonet.
 
 <img width="184" height="70" alt="add-event" src="https://github.com/user-attachments/assets/76e8f366-497a-4785-a753-b808b39f422e" />
 
-Clicking the Add Event allows you to create a personally logged event.
+Clicking the Add Event allows you to create a private event.
 
 <img width="632" height="595" alt="add-event-form" src="https://github.com/user-attachments/assets/0fc18fe9-290a-46d6-a3a9-f66c0ade2369" />
 
@@ -26,7 +28,7 @@ Once you've created the event, it'll be listed in your My Event page.
 
 <img width="1076" height="193" alt="holonet-event" src="https://github.com/user-attachments/assets/b95cd79b-7d61-4142-929d-c2b83546b0e9" />
 
-If you added an event from the Holonet, it'll display a `Holonet` chip.
+If you added an event from the Holonet, it'll be listed as an event in your My Event page, it will display a `Holonet` chip.
 
 ## Adding Books to an Event
 
