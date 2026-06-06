@@ -68,5 +68,8 @@ You'll also notice that the session has an `Attended` switch, when turn the swit
 
 Sessions and Events can be edited, any of the information that you added while creating the session or event can be updated or removed.
 
-One thing to keep in mind, is all sessions in an event must be removed before you can remove an event.
+There are a few of things to keep in mind.
+
+* All sessions in an event must be removed before you can remove an event.
+* For Holonet events, there is some information that is inherited from the Holonet event. These are not editable.
 
