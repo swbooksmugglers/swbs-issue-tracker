@@ -40,5 +40,17 @@ The books available in the list are all of the titles in your collection filtere
 
 <img width="740" height="451" alt="books-brought" src="https://github.com/user-attachments/assets/8e5b3a58-5caa-4c90-909f-3416b6390242" />
 
-Click on the chevron (`v`) icon on the `Books Brought` section will display a scrollable list of your selected
- books.
+Click on the chevron (`v`) icon on the `Books Brought` section will display a scrollable list of your selected books.
+
+## Adding a Session
+
+<img width="673" height="499" alt="add-session" src="https://github.com/user-attachments/assets/5d8d3093-83f4-4aa3-800e-5a075094f87b" />
+
+Next you can add session(s) to your event, so you'll know the time & location for signing session.
+
+<img width="685" height="630" alt="session-authors" src="https://github.com/user-attachments/assets/e111b5e7-c2b3-45ef-a281-32c429dc623d" />
+
+You'll need to assign an attending author to a session, at most events not all authors will be at the same session. The authors in the list are filtered by the attending authors. You will also be able to assign authors to multiple sessions within an event.
+
+
+
