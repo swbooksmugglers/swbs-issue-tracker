@@ -1,6 +1,6 @@
 # Filter
 
-Most pages will have a `Filter` button, this opens up the filter window which provides filtering options.
+Most pages will have a `Filter` button, this opens up the filter window for you to set up a filter.
 
 Filter options
 * allow for multiple selected values
