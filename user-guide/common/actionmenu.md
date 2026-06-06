@@ -4,9 +4,9 @@
 
 Almost every list on the site from your Collection, Wishlist, Reading List, Events, search results, etc. has a three-dot menu (⋮) on each row. Clicking on the menu opens a contextual Action Menu.
 
-The options on the Action Menu will vary depending on the page that you're on.
+The options on the Action Menu will vary depending on the page.
 
-Here are some of the common actions:
+Action Menu options by page.
 
 | Page | Action Option | Notes |
 |------|------------|-------|
