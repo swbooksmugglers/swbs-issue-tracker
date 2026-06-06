@@ -1,5 +1,7 @@
 # Action Menu
 
+<img width="1243" height="262" alt="row-actions" src="https://github.com/user-attachments/assets/92ac4ed4-5008-44a2-a65f-947caf4e977c" />
+
 Almost every list on the site from your Collection, Wishlist, Reading List, Events, search results, etc. has a three-dot menu (⋮) on each row. Clicking on the menu opens a contextual Action Menu.
 
 The options on the Action Menu will vary depending on the page that you're on.
