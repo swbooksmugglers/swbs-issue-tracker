@@ -88,3 +88,8 @@ There are a few of things to keep in mind.
 * All sessions in an event must be removed before you can remove an event.
 * For Holonet events, there is some information that is inherited from the Holonet event. These are not editable.
 
+## Searching & Filtering Events
+
+You can search events by attending author and also apply filters based on the event name.
+
+[Details on using the search & filter](../common/eventtoolbar.md).
