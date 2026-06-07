@@ -6,7 +6,7 @@ The Home page is the primary landing page. Currnetly it displays catalog updates
 
 <img width="779" height="448" alt="requested-title-updates" src="https://github.com/user-attachments/assets/565fd867-c230-4908-af35-2f57f309276f" />
 
-Requested titles will normally be added within 24-48 hours.
+[Requested titles](../common/requesttitle.md) will normally be added within 24-48 hours.
 Your requested titles display in the `Requested Title Updates` table, which lists the latest titles imported into the database over the last 7 days.
 
 If you recently requested a title to be added, you can use the [page level search](../common/search.md#page-level-dataset-search) or [filter](../common/filter.md) to find it.
