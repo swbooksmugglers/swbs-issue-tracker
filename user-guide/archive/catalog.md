@@ -7,5 +7,5 @@ This page has the following features:
 * [Bulk Add](../common/bulkadd.md)
 * [Filtering](../common/filter.md)
 * [Page level search](../common/search.md#page-level-dataset-search)
-* Request a Title if you notice a missing title in the database.
+* [Request a Title](../common/requesttitle.md) if you notice a missing title in the database.
 * Sort the table by title, author, timeline, era, continuity, format, or ISBN using the column headers.
