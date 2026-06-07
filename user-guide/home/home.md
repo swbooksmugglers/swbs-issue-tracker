@@ -2,11 +2,12 @@
 
 The Home page is the primary landing page. Currnetly it displays catalog updates, your recent activity and a very basic dashboard with basic collection statistics.
 
-## Catalog Updates
+## Requested Title Updates
 
-<img width="1142" height="506" alt="catalog-updates" src="https://github.com/user-attachments/assets/ef16975a-e6a7-42fb-89a8-38e56b18f10b" />
+<img width="779" height="448" alt="requested-title-updates" src="https://github.com/user-attachments/assets/565fd867-c230-4908-af35-2f57f309276f" />
 
-Catalog updates display the latest titles imported into the database over the last 7 days.
+Requested titles will normally be added within 24-48 hours.
+Your requested titles display in the `Requested Title Updates` table, which lists the latest titles imported into the database over the last 7 days.
 
 If you recently requested a title to be added, you can use the [page level search](../common/search.md#page-level-dataset-search) or [filter](../common/filter.md) to find it.
 
