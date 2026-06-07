@@ -2,7 +2,7 @@
 
 <img width="192" height="62" alt="request-title" src="https://github.com/user-attachments/assets/b5f61184-6d46-4d79-b81e-0274cbc5afe6" />
 
-If a title is missing from the database, you can use the `Reques Title` feature to get the missing title added. The `Request Title` button can be found on the Catalog page and on the [global search results](search.md#header-global-search).
+If a title is missing from the database, you can use the `Reques Title` feature to get the missing title added. The `Request Title` button can be found on the Catalog page and on the [header search results](search.md#header-global-search).
 
 <img width="631" height="576" alt="request-title-form" src="https://github.com/user-attachments/assets/287aeae5-0e6a-474c-abba-8f98e1de0881" />
 
