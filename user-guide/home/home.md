@@ -22,6 +22,15 @@ The Recent section displays:
 * the last 5 titles you added to your collection
 * the last 5 actions you've performed on the site
 
+## Collection Stats
+
+<img width="1083" height="428" alt="collection-stats" src="https://github.com/user-attachments/assets/56907d3f-8c09-4f91-9995-ba9acd0a86fc" />
+
+Displays a few basic collection stats.
+
+**If you have suggestions on collection stats that you'd like to see, use the [submit a bug](../menu/submitbug.md) or send an email to: support@starwarsbooksmugglers.com with your suggestion.**
+
+
 ## Suggestions
 
 I'm currently looking for ideas on where to take this page. If you would like to contribute:
