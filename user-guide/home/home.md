@@ -28,7 +28,7 @@ The Recent section displays:
 
 Displays a few basic collection stats.
 
-**If you have suggestions on collection stats that you'd like to see, use the [submit a bug](../menu/submitbug.md) or send an email to: support@starwarsbooksmugglers.com with your suggestion.**
+**If you have suggestions on collection stats that you'd like to see, use the contact methods listed below to submit your idea.**
 
 
 ## Suggestions
