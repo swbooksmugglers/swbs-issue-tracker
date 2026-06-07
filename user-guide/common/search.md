@@ -6,6 +6,8 @@
 
 The header section of the website contains a global search that can be used to search the database from anywhere on the site.
 
+If you're unable to find a title using the global search, you can [request a missing title](requesttitle.md).
+
 ## Page Level (Dataset) Search
 
 <img width="1084" height="570" alt="page-level-search" src="https://github.com/user-attachments/assets/5771243c-4153-474a-a1b4-22985188d2cd" />
