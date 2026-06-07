@@ -27,3 +27,9 @@ When viewing events submitted by other community members, you won't see the edit
 <img width="1064" height="117" alt="added-event" src="https://github.com/user-attachments/assets/33fa448f-e3bf-42cb-8376-62d9d4b35ce0" />
 
 Clicking on the bookmark button will add the Holonet event to your "My Events" page, this creates a copy of the event in your private event log.
+
+## Searching & Filtering Events
+
+You can search events by attending author and also apply filters based on the event name.
+
+[Details on using the search & filter](../common/eventtoolbar.md).
