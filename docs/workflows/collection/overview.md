@@ -40,19 +40,21 @@ Collection customizations are stored in `customization` and seeded as:
 
 Power users can add and rename collection customizations from Admin lookup management.
 
-Collected-item signed statuses are stored in `collected_item_signed_status` and seeded as:
-1. `Unsigned`
-2. `Signature Only`
-3. `Personalized Signature`
-4. `Signature with Inscription`
-5. `Personalized with Inscription`
+Signed types are tracked per contributor and stored in `collected_item_contributor_signed_type`. Available types are seeded in `collected_item_signed_type` as:
+1. `Signature`
+2. `Personalized`
+3. `Bookplate`
+4. `Dated`
+5. `Inscription`
+
+An item is considered signed (`is_signed = true`) when at least one contributor has one or more types assigned.
 
 ## User Workflow
 
 1. User opens Collection from the account menu
 2. Client loads the authenticated user's default collection
-3. User filters by catalog fields, reading status, signed status, customization, purchase date, Legends Banner, or text search (filter button shown when results exist or when filters are active)
-4. User sorts the table by title, author, reading status, or signed status using column headers
+3. User filters by catalog fields, reading status, signed types, customization, purchase date, Legends Banner, or text search (filter button shown when results exist or when filters are active)
+4. User sorts the table by title, author, reading status, format, publication date, or date added using column headers
 5. User uses the row actions menu to open read-only book details
 6. User uses the row actions menu to edit collected-item fields
 7. User uses the row actions menu to remove a collected item after simple confirmation
