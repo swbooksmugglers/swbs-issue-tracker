@@ -33,3 +33,9 @@ Clicking on the bookmark button will add the Holonet event to your "My Events" p
 You can search events by attending author and also apply filters based on the event name.
 
 [Details on using the search & filter](../common/eventtoolbar.md).
+
+## Subscribing to Holonet Updates
+
+You can subscribe to Holonet events or specific authors attached to Holonet events.
+
+For more details see [Holonet Subscriptions](../common/holonetsubscriptions.md).
