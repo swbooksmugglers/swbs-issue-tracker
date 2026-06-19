@@ -7,6 +7,7 @@
 * [Event Planning & Management](common/events.md)
 * [Filter](common/filter.md)
 * [Group by Title & Author (contributors)](common/grouping.md)
+* [Holonet Subscriptions](common/holonetsubscriptions.md)
 * [Notifications](common/notifications.md)
 * [Search](common/search.md)
 
