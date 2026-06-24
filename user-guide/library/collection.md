@@ -26,8 +26,7 @@ If mutliple editions are associated to an ISBN, you'll need to select the editio
 
 <img width="610" height="243" alt="not-found-scan" src="https://github.com/user-attachments/assets/c02c2757-0470-4572-a2cc-7a3f5ee3e6da" />
 
-This happens when the ISBN is not found in the catalog. You can use the [Request Title](../common/requesttitle.md), Scan another book or cancel.
-
+This happens when the ISBN is not found in the catalog. You'll presented with options to [Request Title](../common/requesttitle.md), Scan another book or cancel the scanning session.
 
 ## Edit My Book
 
