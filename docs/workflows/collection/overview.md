@@ -58,6 +58,7 @@ An item is considered signed (`is_signed = true`) when at least one contributor 
 5. User uses the row actions menu to open read-only book details
 6. User uses the row actions menu to edit collected-item fields
 7. User uses the row actions menu to remove a collected item after simple confirmation
+8. User can scan an ISBN barcode from Collection to add a catalog book without leaving the page
 
 Collection add, edit, and remove actions are recorded in the audit log and appear in the user's My Activity list on Home.
 
@@ -71,6 +72,19 @@ Collection add, edit, and remove actions are recorded in the audit log and appea
 6. API creates a collected item in the user's default collection
 7. Client shows a snackbar with an edit action
 8. User can immediately edit collected-item metadata without leaving Search Results
+
+## Add By Barcode Scanner Workflow
+
+1. User clicks the Scan ISBN Barcode action from Collection
+2. Client opens the barcode scanner modal and requests access to the device camera
+3. Client scans ISBN, EAN, and UPC barcodes and looks up matching catalog entries by ISBN
+4. If the barcode matches one catalog entry, the client adds that book to the user's collection
+5. If the barcode matches multiple catalog entries, the client asks the user to select the desired edition
+6. If existing copies are found, the client asks the user to confirm adding another copy
+7. By default, the scanner closes after a successful add and opens Edit My Book for the new collected item
+8. If Quick Add is enabled, the scanner skips Edit My Book and stays open so the user can scan additional books
+9. If the scanner reads a barcode but the book is not in the catalog, the modal offers Request Title with the scanned ISBN prefilled
+10. If the scanner cannot read a barcode reliably, the modal advises the user to try a zoomed-in barcode photo, search the catalog manually, or use Request Title when the book is not in the catalog
 
 ## API Workflow
 
