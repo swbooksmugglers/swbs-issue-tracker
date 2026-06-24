@@ -8,7 +8,11 @@ My Collection is the user's personal library manager for their owned Star Wars b
 
 The `Scan` button allows you to use your camera or web cam as a barcode scanner. A successful scan will search the catalog using the ISBN from the barcode and add the title to your collection.
 
+You'll be prompted to allow the scanner to have permissions to your camera.
 
+<img width="613" height="621" alt="scanner-modal" src="https://github.com/user-attachments/assets/7ed10289-959d-4877-beb7-89a58a5765e8" />
+
+The `Quick Add` toggle allows you to skip the `Edit My Book` popup when adding to your collection. This allows you to quickly scan multiple books without being prompted to enter your book's details on each scan.
 
 
 ## Edit My Book
