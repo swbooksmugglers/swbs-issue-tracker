@@ -16,6 +16,18 @@ You'll be prompted to allow the scanner to have permissions to your camera.
 
 The `Quick Add` toggle allows you to skip the `Edit My Book` popup when adding to your collection. This allows you to quickly scan multiple books without being prompted to enter your book's details on each scan.
 
+### ISBN with Multiple Editions Scanned
+
+<img width="609" height="397" alt="dupe-isbn-scanned" src="https://github.com/user-attachments/assets/1276b93c-7648-4682-991b-14c52a7b8ed5" />
+
+If mutliple editions are associated to an ISBN, you'll need to select the edition to add.
+
+### Scanned ISBN Not Found
+
+<img width="610" height="243" alt="not-found-scan" src="https://github.com/user-attachments/assets/c02c2757-0470-4572-a2cc-7a3f5ee3e6da" />
+
+This happens when the ISBN is not found in the catalog. You can use the Request Title, Scan another book or cancel.
+
 
 ## Edit My Book
 
