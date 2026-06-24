@@ -8,6 +8,8 @@ My Collection is the user's personal library manager for their owned Star Wars b
 
 The `Scan` button allows you to use your camera or web cam as a barcode scanner. A successful scan will search the catalog using the ISBN from the barcode and add the title to your collection.
 
+<img width="407" height="417" alt="scanner-permissions" src="https://github.com/user-attachments/assets/e474becf-5bc0-4cf3-b8fb-14ac5619c219" />
+
 You'll be prompted to allow the scanner to have permissions to your camera.
 
 <img width="613" height="621" alt="scanner-modal" src="https://github.com/user-attachments/assets/7ed10289-959d-4877-beb7-89a58a5765e8" />
