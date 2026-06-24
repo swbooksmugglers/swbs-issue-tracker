@@ -2,6 +2,15 @@
 
 My Collection is the user's personal library manager for their owned Star Wars books. You will find your collection listed and have the ability to add personal details to your copy of the books.
 
+## Barcode Scanner
+
+<img width="151" height="70" alt="scan-button" src="https://github.com/user-attachments/assets/7ca09547-00c3-40b8-ac3f-e4a842425920" />
+
+The `Scan` button allows you to use your camera or web cam as a barcode scanner. A successful scan will search the catalog using the ISBN from the barcode and add the title to your collection.
+
+
+
+
 ## Edit My Book
 
 <img width="311" height="255" alt="action-menu" src="https://github.com/user-attachments/assets/ac7092e6-c576-469a-9e33-86fbefa42988" />
