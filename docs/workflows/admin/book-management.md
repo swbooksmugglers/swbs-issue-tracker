@@ -176,13 +176,13 @@ Batch summary import saves each found summary as a new `book summary` audit entr
 
 ## ISBN Import Summary Workflow
 
-When ISBN import finds a book through ISFDB, the backend should also perform a best-effort Google Books summary lookup using the normalized ISBN.
+When ISBN import finds a book through ISFDB, Google Books, or Amazon fallback, the backend should also perform a best-effort Google Books summary lookup using the normalized ISBN when the selected metadata does not already include a summary.
 
-ISBN import canonicalizes valid ISBN-10 and ISBN-13 values to ISBN-13 for duplicate checks, ISFDB lookup fallback values, Google Books summary lookup, and the imported book form value.
+ISBN import canonicalizes valid ISBN-10 and ISBN-13 values to ISBN-13 for duplicate checks, ISFDB lookup fallback values, Google Books metadata lookup, Google Books summary lookup, Amazon lookup, and the imported book form value.
 
 If Google Books returns a summary, include it as `summary` in the import payload.
 
-If Google Books returns no summary or the summary lookup fails, include `summary: ""` and still return the ISFDB import data.
+If Google Books returns no summary or the summary lookup fails, include `summary: ""` and still return the imported metadata from the selected source.
 
 The frontend displays the imported summary in the book form. Saving the book stores the summary and generates its embedding when the summary is not blank.
 

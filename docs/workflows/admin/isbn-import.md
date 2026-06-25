@@ -4,11 +4,13 @@
 
 ISBN Import requires role `admin` or `power_user`.
 
-Import searches ISFDB by ISBN.
+Import searches ISFDB by ISBN, falls back to Google Books metadata, and finally falls back to Amazon product data through ScraperAPI.
+
+Import performs best-effort Amazon ASIN enrichment whenever ScraperAPI is configured.
 
 Imported data pre-fills the Add Book form.
 
-Import can create missing author and publisher records.
+Import can create missing author, contributor, and publisher records.
 
 Import does not create the book record until the user saves the Add Book form.
 
@@ -27,15 +29,24 @@ Server side validation must occur at the API level.
 The ISBN import API must validate:
 1. Caller has role `admin` or `power_user`
 2. ISBN is present
-3. ISFDB returns a usable publication record
+3. At least one configured metadata source returns a usable publication record
 
-The API removes ISBN hyphens before searching.
+The API removes ISBN hyphens and canonicalizes valid ISBN-10 or ISBN-13 values to ISBN-13 before searching.
 
-If ISFDB search fails, return bad gateway.
+Metadata lookup order:
+1. ISFDB
+2. Google Books, when ISFDB returns no usable publication
+3. Amazon through ScraperAPI, when ISFDB and Google Books return no usable publication
 
-If ISFDB returns no matching publication, return not found.
+Google Books summary lookup runs when the selected publication data does not already include a summary.
 
-If author or publisher from ISFDB does not exist locally, create it.
+ScraperAPI Amazon lookup also runs as ASIN enrichment. If ISFDB or Google Books already returned metadata, ScraperAPI ASIN lookup failures do not block the import and the response may include `asin: null`.
+
+If Amazon is needed as the final metadata fallback and ScraperAPI is rate-limited, return a quota-exceeded response.
+
+If all configured metadata sources return no matching publication, return not found.
+
+If author, contributor, or publisher from the selected metadata source does not exist locally, create it.
 
 Author and publisher names are normalized before lookup and storage: accented characters are converted to their ASCII equivalents (e.g. "Córdova" → "Cordova").
 
@@ -48,15 +59,19 @@ Author and publisher names are normalized before lookup and storage: accented ch
 5. Client trims ISBN and validates length is at least 3 characters
 6. Client calls ISBN import API
 7. API searches ISFDB by ISBN
-8. API parses publication data
-9. API upserts author and publisher when needed
-10. API resolves matching book type when possible
-11. API returns prefill data
-12. Client closes ISBN Import modal
-13. Client opens Add Book modal with imported fields prefilled
-14. Client displays creation notice for any newly created author or publisher
-15. User completes any missing required book fields
-16. User saves Add Book form
+8. API falls back to Google Books metadata when ISFDB has no usable publication
+9. API enriches summary from Google Books when needed
+10. API searches Amazon through ScraperAPI for ASIN enrichment
+11. API falls back to Amazon product data when ISFDB and Google Books have no usable publication
+12. API parses publication data
+13. API upserts authors, contributors, and publisher when needed
+14. API resolves matching book type when possible
+15. API returns prefill data
+16. Client closes ISBN Import modal
+17. Client opens Add Book modal with imported fields prefilled
+18. Client displays creation notice for any newly created author or publisher
+19. User completes any missing required book fields
+20. User saves Add Book form
 
 Prefilled fields can include:
 1. Title
@@ -65,13 +80,14 @@ Prefilled fields can include:
 4. Publication date
 5. MSRP
 6. Notes
-7. Summary
-8. Author
-9. Publisher
-10. Format
-11. Continuity (inferred from publication date when not explicitly set)
-12. Series
-13. Sub-series
+7. ASIN
+8. Summary
+9. Author or contributors
+10. Publisher
+11. Format
+12. Continuity (inferred from publication date when not explicitly set)
+13. Series
+14. Sub-series
 
 ## Summary Import Workflow
 
@@ -94,8 +110,14 @@ Summary import jobs store the initiating user ID and email snapshot. The Admin p
 ## Failure Workflow
 
 1. If ISBN is too short, keep Import button disabled
-2. If ISFDB search fails, display API error message
-3. If no ISFDB record is found, display API error message
+2. If a required metadata fallback is rate-limited, display API error message
+3. If no configured source returns a usable record, display API error message
 4. If local database update fails, display API error message
 5. If network fails, display network error message
 6. Keep the ISBN Import modal open
+
+## Amazon Import Endpoint
+
+The backend keeps `GET /api/admin/amazon/import/{isbn}` as a dedicated Amazon/ScraperAPI import endpoint.
+
+The Admin page no longer exposes a separate Amazon Import button. The ISBN Import flow uses the same Amazon lookup behavior internally for final metadata fallback and ASIN enrichment.
