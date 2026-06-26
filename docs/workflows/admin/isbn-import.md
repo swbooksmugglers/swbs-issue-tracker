@@ -55,23 +55,24 @@ Author and publisher names are normalized before lookup and storage: accented ch
 1. Admin or power user opens Admin page
 2. User clicks ISBN Import
 3. User enters ISBN
-4. User clicks Import
-5. Client trims ISBN and validates length is at least 3 characters
-6. Client calls ISBN import API
-7. API searches ISFDB by ISBN
-8. API falls back to Google Books metadata when ISFDB has no usable publication
-9. API enriches summary from Google Books when needed
-10. API searches Amazon through ScraperAPI for ASIN enrichment
-11. API falls back to Amazon product data when ISFDB and Google Books have no usable publication
-12. API parses publication data
-13. API upserts authors, contributors, and publisher when needed
-14. API resolves matching book type when possible
-15. API returns prefill data
-16. Client closes ISBN Import modal
-17. Client opens Add Book modal with imported fields prefilled
-18. Client displays creation notice for any newly created author or publisher
-19. User completes any missing required book fields
-20. User saves Add Book form
+4. Optionally, user clicks the scan barcode action, grants camera access, scans an ISBN barcode, and the client fills the ISBN field without submitting
+5. User clicks Search
+6. Client trims ISBN and validates length is at least 3 characters
+7. Client calls ISBN import API
+8. API searches ISFDB by ISBN
+9. API falls back to Google Books metadata when ISFDB has no usable publication
+10. API enriches summary from Google Books when needed
+11. API searches Amazon through ScraperAPI for ASIN enrichment
+12. API falls back to Amazon product data when ISFDB and Google Books have no usable publication
+13. API parses publication data
+14. API upserts authors, contributors, and publisher when needed
+15. API resolves matching book type when possible
+16. API returns prefill data
+17. Client closes ISBN Import modal
+18. Client opens Add Book modal with imported fields prefilled
+19. Client displays creation notice for any newly created author or publisher
+20. User completes any missing required book fields
+21. User saves Add Book form
 
 Prefilled fields can include:
 1. Title
