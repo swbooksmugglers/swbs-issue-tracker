@@ -13,8 +13,12 @@ Read workflow docs with `docs/context/index.md`. Shared auth, permissions, secur
 | User Management | [admin/user-management.md](admin/user-management.md) |
 | ISBN Import | [admin/isbn-import.md](admin/isbn-import.md) |
 | Summary Sync | [admin/summary-sync.md](admin/summary-sync.md) |
+| ASIN Sync | [admin/asin-sync.md](admin/asin-sync.md) |
+| Event Sync | [admin/event-sync.md](admin/event-sync.md) |
 | Book Management | [admin/book-management.md](admin/book-management.md) |
 | Lookup Management | [admin/lookup-management.md](admin/lookup-management.md) |
+| Cover Art Management | [admin/cover-art-management.md](admin/cover-art-management.md) |
+| Announcements | [admin/announcements.md](admin/announcements.md) |
 
 ## Archive
 

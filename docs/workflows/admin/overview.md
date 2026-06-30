@@ -11,12 +11,18 @@ The page is available to users with role `admin` or `power_user`.
 Admin users can access:
 1. User Management
 2. Audit Log
-3. Archive Import
-4. Archive Management
+3. Announcements
+4. Archive Import
+5. Archive Management
+6. Cover Art Management
+7. Event Management
 
 Power users can access:
 1. Archive Import
 2. Archive Management
+3. Cover Art Management (UI only — every Cover Art Management server endpoint requires `admin`; see `cover-art-management.md`)
+
+Event Management (Fan Expo Sync, GalaxyCon Sync) and Announcements are admin-only; they are not available to power users.
 
 Users without `admin` or `power_user` role must not access the Admin page.
 
@@ -28,8 +34,12 @@ Admin page workflows are documented in:
 3. `audit-log.md`
 4. `isbn-import.md`
 5. `summary-sync.md`
-6. `book-management.md`
-7. `lookup-management.md`
+6. `asin-sync.md`
+7. `event-sync.md`
+8. `book-management.md`
+9. `lookup-management.md`
+10. `cover-art-management.md`
+11. `announcements.md`
 
 ## Role Rules
 
@@ -51,7 +61,7 @@ If the user has role `user`, redirect to the Home page.
 
 ## Server Entry Points
 
-Admin APIs are served under `/admin`.
+Most Admin APIs are served under `/admin`. Event Management is the exception: Fan Expo Sync and GalaxyCon Sync are served under `/api/fanexpo` and `/api/galaxycon` respectively (see `event-sync.md`).
 
 APIs that require admin access must use admin authorization.
 
