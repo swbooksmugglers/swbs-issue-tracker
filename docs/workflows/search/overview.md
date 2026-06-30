@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Search lets signed-in users find books in the archive by title, ISBN, author, publisher, or exclusive.
+Search lets visitors find books in the archive by title, ISBN, author, publisher, or exclusive.
 
 ## Workflows
 
@@ -13,13 +13,13 @@ Search workflows are documented in:
 
 ## Role Rules
 
-Search requires a signed-in user.
+Read-only search is public.
 
-Any enabled user with a valid JWT can search books.
+Account-only search actions require an enabled user with a valid JWT.
 
 ## Client Entry Points
 
-Search is available from the header on authenticated pages.
+Search is available from the header on public and authenticated pages.
 
 The Filter dialog is available on the Search Results page only.
 
@@ -35,10 +35,12 @@ ISBN lookup is served by `GET /api/book/isbn/{isbn}`.
 
 Add book to catalog is served by `POST /api/book`.
 
-All APIs require authenticated user access.
+Search and filter APIs allow public access. ISBN import and add-book APIs require authenticated user access.
 
 ## Failure Handling
 
-If search API returns unauthorized or forbidden, clear the stored token and redirect to the Sign In page.
+If an account-only action is selected without a token, prompt the visitor to sign in or create an account.
+
+If an account-only API returns unauthorized or forbidden, clear the stored token and redirect to the Sign In page.
 
 If search API fails due to network or server error, keep the user on Search Results page and display an error message.

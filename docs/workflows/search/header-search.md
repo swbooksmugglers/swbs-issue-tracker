@@ -2,7 +2,9 @@
 
 ## Rules
 
-User must be signed in with a valid JWT.
+Header search is public.
+
+Account-only actions from search results require a signed-in user with a valid JWT.
 
 Search query must be at least 3 characters after trimming whitespace.
 
@@ -25,9 +27,8 @@ On client side validation failure:
 Server side validation must occur at the API level.
 
 The search API must validate:
-1. Caller is authenticated
-2. Query is present
-3. Query is at least 3 characters after trimming
+1. Query is present
+2. Query is at least 3 characters after trimming
 
 If query is invalid, return an unprocessable entity error.
 
@@ -43,4 +44,4 @@ If query is invalid, return an unprocessable entity error.
 ## Failure Workflow
 
 1. If query is too short, remain on the current page
-2. If no valid token exists, authenticated page redirects to Sign In page
+2. If search results load but an account-only action is selected without a token, prompt the visitor to sign in or create an account

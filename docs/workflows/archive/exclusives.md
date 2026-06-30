@@ -24,8 +24,7 @@ On client side validation:
 Server side validation must occur at the API level.
 
 The exclusives API must validate:
-1. Caller is authenticated
-2. Book has a non-null exclusive ID
+1. Book has a non-null exclusive ID
 
 ## Success Workflow
 
@@ -55,4 +54,4 @@ Displayed fields are:
 ## Failure Workflow
 
 1. If API request fails, display failed-to-load exclusives message
-2. If token is invalid, clear stored token and redirect to Sign In page
+2. If token is invalid during an account-only request, clear stored token and redirect to Sign In page

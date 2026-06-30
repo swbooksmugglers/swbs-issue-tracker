@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Support workflows let signed-in users access the FAQ, user guides, submit bug reports, and view app version information.
+Support workflows let visitors access the FAQ and guides. Signed-in users can also submit bug reports, view app version information, and open contributor stats.
 
 ## Workflows
 
@@ -12,7 +12,9 @@ Support workflows are documented in:
 
 ## Role Rules
 
-Support content (FAQ, Gutter Codes, SFBC Guide) is accessible to signed-in users from the **Codex** navigation tab in the header.
+Support content (FAQ and Guides) is accessible to public visitors from the **Codex** navigation tab in the header.
+
+Stats is accessible from the **Codex** navigation tab only for signed-in users.
 
 Submit a Bug and About are accessible from the account menu.
 
@@ -24,8 +26,9 @@ Version lookup does not require authentication at the API level, but is currentl
 
 The Codex tab in the header nav bar opens a sub-menu with:
 - **FAQ** → `/support` (FAQs and user guide content)
-- **Gutter Codes** → `/gutter-codes` (static reference guide)
-- **SFBC Guide** → `/sfbc-guide` (static reference guide)
+- **Guides** → `/guides` (static reference guides)
+- **User Guide** → external user guide link
+- **Stats** → `/stats` (signed-in users only)
 
 ## Server Entry Points
 

@@ -2,22 +2,24 @@
 
 ## Rules
 
-Search Results requires a signed-in user with a valid JWT.
+Search Results are public for read-only catalog search.
+
+Account-only row actions require a signed-in user with a valid JWT.
 
 Search query and optional filters come from route state.
 
 ## Client Side Validation
 
 On page load:
-1. If no token exists, redirect to Sign In page
-2. If query is fewer than 3 characters after trimming whitespace, do not call search API
-3. If query is valid, clear previous results and call the search API with the trimmed query and any active filters
+1. If query is fewer than 3 characters after trimming whitespace, do not call search API
+2. If query is valid, clear previous results and call the search API with the trimmed query and any active filters
+3. Fetch account-only state such as wishlist membership only when a token exists
 
 ## Server Side Validation
 
 The search API must validate:
-1. Caller is authenticated
-2. Query is at least 3 characters
+1. Query is at least 3 characters
+2. Account-only mutations are authenticated
 
 Search matches books by:
 1. ISBN
@@ -34,7 +36,7 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 
 ## Success Workflow
 
-1. Search Results page reads stored token for auth; receives query and optional filters from route state
+1. Search Results page reads stored token when present; receives query and optional filters from route state
 2. Client validates query length is at least 3 characters after trimming whitespace
 3. Client calls search API with `scope=all` and any active filter params
 4. API returns matching metadata results and, when enabled, summary semantic results
@@ -43,9 +45,10 @@ When `SEMANTIC_SEARCH_ENABLED=false`, `scope=all` returns metadata matches only 
 7. User can open a read-only book details dialog from the row action icon
 8. User can click **Filter** to open the filter dialog and narrow results server-side (Filter shown when results exist or when filters are active)
 9. User can sort results by title, ISBN, author, publisher, or publication date using column headers
-10. User can add a row's book to their collection from the row action icon
-11. User can add a row's book to their wishlist, or navigate to the wishlist pre-filtered on that book if it is already on the wishlist
-12. After a valid search, client always displays the ISBN Import prompt below results
+10. Signed-in users can add a row's book to their collection from the row action icon
+11. Signed-in users can add a row's book to their wishlist, or navigate to the wishlist pre-filtered on that book if it is already on the wishlist
+12. Public visitors who choose an account-only action are prompted to sign in or create an account
+13. After a valid search, signed-in users see the ISBN Import prompt below results
 
 Displayed result fields:
 1. Cover
@@ -116,4 +119,5 @@ Available to any authenticated user after a valid search is performed, regardles
 
 1. If API call is aborted, do not display an error
 2. If search fails, display search error message
-3. If token is invalid, clear stored token and redirect to Sign In page
+3. If an account-only action is requested without a token, prompt the visitor to sign in or create an account
+4. If token is invalid, clear stored token and redirect to Sign In page

@@ -2,11 +2,11 @@
 
 ## Rules
 
-Authenticated routes must require a stored token.
+Private routes must require a stored token.
 
-If no token exists, redirect to Sign In page.
+If no token exists on a private route, redirect to Sign In page.
 
-Unknown routes redirect to Sign In page.
+Unknown routes redirect to the public catalog.
 
 ## Client Side Validation
 
@@ -16,36 +16,43 @@ Protected pages read the stored token.
 
 If no stored token exists, protected page redirects to Sign In page.
 
+Public archive and Codex reference pages render without a stored token. Account-only actions on public pages prompt visitors to sign in or create an account.
+
+## Public Routes
+
+Public routes include:
+1. `/`
+2. `/signin`
+3. `/signup`
+4. `/activate`
+5. `/forgot-password`
+6. `/reset-password`
+7. `/archive/catalog`
+8. `/archive/exclusives`
+9. `/archive/sfbc`
+10. `/archive/timeline`
+11. `/archive/legends`
+12. `/search`
+13. `/support`
+14. `/guides`
+
 ## Protected Routes
 
 Protected routes include:
 1. `/home`
 2. `/settings`
-3. `/archive/catalog`
-4. `/archive/exclusives`
-5. `/archive/legends`
-6. `/archive/sfbc`
-7. `/archive/timeline`
-8. `/collection`
-9. `/events`
-10. `/reading-list`
-11. `/wishlist`
-12. `/admin`
-13. `/search`
-14. `/support`
-15. `/gutter-codes`
-16. `/sfbc-guide`
+3. `/collection`
+4. `/events`
+5. `/reading-list`
+6. `/wishlist`
+7. `/admin`
+8. `/stats`
 
 Admin-only data views inside `/admin` include:
 1. Audit Log
 2. User Management
 
-SUSI public routes include:
-1. `/`
-2. `/signup`
-3. `/activate`
-4. `/forgot-password`
-5. `/reset-password`
+The public landing route `/` redirects to `/archive/catalog`.
 
 ## Admin Route Workflow
 
@@ -56,7 +63,7 @@ If role is not `admin` or `power_user`, redirect to Home page.
 ## Unknown Route Workflow
 
 1. User navigates to an unknown route
-2. App redirects to Sign In page
+2. App redirects to the public catalog
 
 ## Failure Workflow
 

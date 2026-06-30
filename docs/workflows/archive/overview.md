@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Archive displays exclusive books grouped by exclusive.
+Archive displays the public catalog and archive reference pages.
 
 ## Workflows
 
@@ -13,15 +13,15 @@ Archive workflows are documented in:
 
 ## Role Rules
 
-Archive requires a signed-in user.
+Archive read-only pages are public.
 
-Any enabled user with a valid JWT can view Archive.
+Account-only actions require an enabled user with a valid JWT.
 
 ## Client Entry Points
 
-Archive is available from the header account menu.
+Archive is available from the header navigation menu.
 
-Archive route is `/archive`.
+Archive routes include `/archive/catalog`, `/archive/exclusives`, `/archive/legends`, `/archive/sfbc`, and `/archive/timeline`.
 
 ## Server Entry Points
 
@@ -29,4 +29,4 @@ Exclusive books API is served by `/book/exclusives`.
 
 Book detail API is served by `/book/{book_id}`.
 
-The APIs must require authenticated user access.
+Read-only archive APIs allow public access. Archive mutation and management APIs require authenticated user access.

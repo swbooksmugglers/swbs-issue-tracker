@@ -8,17 +8,19 @@ Header displays app name.
 
 Header displays global search.
 
-Header displays a credits earned badge showing the user's accumulated activity points.
+Public visitors see Sign in and Create account actions.
 
-Header displays a notification bell icon button.
+Signed-in users see a credits earned badge showing the user's accumulated activity points.
 
-Header displays the account menu button showing the user's rank and name.
+Signed-in users see a notification bell icon button.
+
+Signed-in users see the account menu button showing the user's rank and name.
 
 ## Client Side Validation
 
-Client side validation occurs when Header renders.
+Client side validation occurs when Header renders with a stored token.
 
-On render:
+When a token exists:
 1. Decode token payload
 2. Read first name and role from token
 3. Read display name, faction, and collected item count from theme preference context
@@ -26,28 +28,39 @@ On render:
 5. Display rank and name as the account menu button label (e.g. "Padawan Herm")
 6. Use display name when set, fall back to first name from token
 
+When no token exists:
+1. Render public navigation
+2. Hide account-only navigation and controls
+3. Show Sign in and Create account actions
+
 ## Navigation Tabs
 
-Header renders four navigation tabs below the top bar:
+Header renders navigation tabs below the top bar.
 
-1. **Home** (`/home`) — navigates directly
-2. **Archive** — opens Archive sub-menu:
+Public visitors see:
+
+1. **Archive** — opens Archive sub-menu:
    - Catalog (`/archive/catalog`)
    - Exclusives (`/archive/exclusives`)
    - Legends Reference (`/archive/legends`)
    - SFBC Reference (`/archive/sfbc`)
    - Timeline (`/archive/timeline`)
-3. **My Library** — opens My Library sub-menu:
+2. **Codex** — opens Codex sub-menu:
+   - FAQ (`/support`)
+   - Guides (`/guides`)
+   - User Guide (external link)
+
+Signed-in users additionally see:
+
+1. **Home** (`/home`) — navigates directly
+2. **My Library** — opens My Library sub-menu:
    - My Collection (`/collection`)
    - My Events (`/events`)
    - My Reading List (`/reading-list`)
    - My Wishlist (`/wishlist`)
-4. **Codex** — opens Codex sub-menu:
-   - FAQ (`/support`)
-   - Gutter Codes (`/gutter-codes`)
-   - SFBC Guide (`/sfbc-guide`)
+3. **Stats** (`/stats`) inside the Codex sub-menu
 
-The active tab is determined by the current route. The Codex tab is active when the current path is `/support`, `/gutter-codes`, or `/sfbc-guide`.
+The active tab is determined by the current route. The Codex tab is active when the current path is `/support`, `/guides`, or `/stats`.
 
 ## Account Menu Workflow
 
