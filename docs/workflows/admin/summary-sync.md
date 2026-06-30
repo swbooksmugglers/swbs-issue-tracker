@@ -27,8 +27,12 @@ Summary Sync APIs are served under `/admin/book-summary/sync`.
 
 All Summary Sync APIs require `admin` or `power_user` access.
 
+When `SCHEDULER_ENABLED=true`, Summary Sync also runs daily at `SUMMARY_SYNC_SCHEDULE_TIME` in `SCHEDULER_TIMEZONE`. Scheduled runs use `SCHEDULER_EMAIL` for audit log identity and do not authenticate as a user.
+
 ## Failure Handling
 
 Individual target update failures do not stop the full job. The failed pair is recorded and the job continues to the next candidate.
 
 If the job stops unexpectedly, the persisted job status is set to `failed` and the Admin page displays the failure state.
+
+Manual Summary Sync requests return `409 Conflict` when a non-stale Summary Sync job is already queued or running. Stale active jobs older than `SCHEDULER_TIMEOUT_MINUTES` are marked failed before a new manual or scheduled run starts.
