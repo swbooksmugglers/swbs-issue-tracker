@@ -40,6 +40,7 @@ Admin page workflows are documented in:
 9. `lookup-management.md`
 10. `cover-art-management.md`
 11. `announcements.md`
+12. `analytics.md`
 
 ## Role Rules
 
@@ -51,6 +52,8 @@ Only admins can manage users.
 
 Only admins can view audit logs.
 
+Only admins can view the Analytics page.
+
 ## Client Entry Points
 
 Admin page is available from the header account menu when the signed-in user has role `admin` or `power_user`.
@@ -58,6 +61,8 @@ Admin page is available from the header account menu when the signed-in user has
 If the user has no token, redirect to the Sign In page.
 
 If the user has role `user`, redirect to the Home page.
+
+The Analytics page is a separate route (`/admin/analytics`), not an Admin page section. It has its own header account menu entry, shown only when the signed-in user has role `admin`. See `analytics.md`.
 
 ## Server Entry Points
 
