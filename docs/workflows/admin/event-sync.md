@@ -2,16 +2,17 @@
 
 Event Sync requires role `admin`. Unlike Archive Import and Archive Management, Event Sync is not available to `power_user`.
 
-Event Sync covers two independent convention integrations that share one job table and one concurrency lock:
+Event Sync covers three independent integrations that share one job table and one concurrency lock:
 
 1. **Fan Expo Sync** — scrapes upcoming Fan Expo events and comic creator guest lists.
 2. **GalaxyCon Sync** — scrapes upcoming GalaxyCon events and creator appearance pages.
+3. **Penguin Random House Sync** — fetches upcoming Star Wars books from the PRH API, resolves author events, and syncs them into public events.
 
-Each sync starts a persisted background job. It scrapes the provider's public site, creates any `public_event` rows that do not already exist (matched by name + date), and links any scraped creators who match a known local `author` to the event as comic creator guests. Existing events and existing author links are skipped, not duplicated.
+Each sync starts a persisted background job that creates any `public_event` rows not already present (matched by name + date) and links matching local `author` records. Existing events and existing author links are skipped, not duplicated.
 
 ## Shared Concurrency Lock
 
-Fan Expo and GalaxyCon jobs are stored in a single `event_sync_job` table distinguished by a `source` column (`fanexpo` or `galaxycon`). Only one event sync job — from either source — may be queued or running at a time. Starting one provider's sync while the other is active returns `409 Conflict`.
+All three jobs are stored in a single `event_sync_job` table distinguished by a `source` column (`fanexpo`, `galaxycon`, or `prh`). Only one event sync job — from any source — may be queued or running at a time. Starting a sync while another is active returns `409 Conflict`.
 
 ## Job Progress
 
@@ -26,16 +27,17 @@ Event sync jobs store the initiating user ID and email snapshot. The Admin progr
 
 ## Client Entry Point
 
-Fan Expo Sync and GalaxyCon Sync appear as separate cards under the Admin page's Event Management section, each with its own button, progress bar, and status alert.
+Fan Expo Sync, GalaxyCon Sync, and Penguin Random House Sync appear as separate cards under the Admin page's Event Management section, each with its own button, progress bar, and status alert.
 
 ## Server Entry Points
 
 - Fan Expo Sync APIs are served under `/api/fanexpo/events/sync` (not under `/admin`).
 - GalaxyCon Sync APIs are served under `/api/galaxycon/events/sync` (not under `/admin`).
+- PRH Sync APIs are served under `/api/prh/events/sync` (not under `/admin`).
 
-All Event Sync job APIs (start, current, by ID) require `admin` access. The underlying read-only scrape endpoints (`/events`, `/creators`, etc.) on each router require only `power_user`.
+All Event Sync job APIs (start, current, by ID) require `admin` access. The underlying read-only endpoints (`/events`, `/creators`, etc.) on each router require only `power_user`.
 
-When `SCHEDULER_ENABLED=true`, Event Sync also runs daily at `EVENT_SYNC_SCHEDULE_TIME` in `SCHEDULER_TIMEZONE`. The scheduler runs Fan Expo first, then GalaxyCon, sequentially — never in parallel, consistent with the shared lock. Scheduled runs use `SCHEDULER_EMAIL` for audit log identity and do not authenticate as a user. If a provider raises during the scheduled run, the error is logged and the scheduler still attempts the next provider.
+When `SCHEDULER_ENABLED=true`, Fan Expo and GalaxyCon run daily at `EVENT_SYNC_SCHEDULE_TIME` in `SCHEDULER_TIMEZONE` (sequentially, never in parallel). PRH Sync runs separately on a weekly schedule every Sunday at `PRH_SYNC_SCHEDULE_TIME` (default `00:00`). Scheduled runs use `SCHEDULER_EMAIL` for audit log identity and do not authenticate as a user. If a provider raises during a scheduled run, the error is logged and the scheduler continues.
 
 ## Failure Handling
 
