@@ -6,7 +6,7 @@ Event Sync covers three independent integrations that share one job table and on
 
 1. **Fan Expo Sync** — scrapes upcoming Fan Expo events and comic creator guest lists.
 2. **GalaxyCon Sync** — scrapes upcoming GalaxyCon events and creator appearance pages.
-3. **Penguin Random House Sync** — fetches upcoming Star Wars books from the PRH API, resolves author events, and syncs them into public events.
+3. **Penguin Random House Sync** — fetches upcoming Star Wars books from the PRH API, imports new titles into the archive (including cover art from ScraperAPI when available), resolves author events, and syncs them into public events.
 
 Each sync starts a persisted background job that creates any `public_event` rows not already present (matched by name + date) and links matching local `author` records. Existing events and existing author links are skipped, not duplicated.
 
