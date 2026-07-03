@@ -6,6 +6,21 @@ The job captures active eBay Browse API listing prices for catalog books with va
 
 Only books with checksum-valid ISBN-10 or ISBN-13 values are eligible. ISBN-10 values are converted to ISBN-13 before searching. Books that already have an eBay active-listing snapshot for the current date are skipped so manual reruns do not duplicate daily chart points.
 
+## Price display (Book Price Modal)
+
+The price index endpoint (`GET /api/books/price-snapshots`) returns a **rolling 7-day window** aggregate per book: `observed_on BETWEEN CURRENT_DATE - 7 AND CURRENT_DATE`. Stats are computed across all snapshots in the window:
+
+- **Low**: `MIN(low_price)` across the window.
+- **High**: `MAX(high_price)` across the window.
+- **Avg**: weighted mean — `SUM(average_price * priced_listing_count) / SUM(priced_listing_count)`.
+- **Median**: weighted mean of daily medians — `SUM(median_price * priced_listing_count) / SUM(priced_listing_count)`.
+
+If fewer than 7 days of snapshots exist for a book, the window is calculated from whatever data is available. The response includes `window_start`, `window_end`, `days_with_data`, `priced_listing_count`, and `cover_key` (joined from `book`).
+
+## Price history chart
+
+`GET /api/book/{book_id}/price-history` returns daily rows for the last 90 days, ordered by `observed_on ASC`. Each row contains `observed_on`, `low_price`, `average_price`, `median_price`, `high_price`, and `currency`. The modal renders these as a line chart (Low, Avg, Median, High) using `@mui/x-charts`.
+
 Search strategy:
 
 1. Search Browse API with `gtin=<isbn13>`.
